@@ -13,6 +13,21 @@ Hermes, OmniRoute, Hindsight의 설정 예시와 운영 스크립트, 검증 도
 
 이 저장소는 현재 운영 환경의 복원 이미지가 아니다. 데이터베이스, 인증 정보, 메모리와 모델 파일은 포함하지 않는다. 서비스의 현재 상태와 연결 여부는 별도로 확인해야 한다.
 
+## 전체 환경 검증
+
+프로젝트 스킬 [verify-ai-stack](.cursor/skills/verify-ai-stack/SKILL.md)은 설치된 환경의 단일 로컬 endpoint, Hermes CLI, OmniRoute 라우팅, Hindsight 기억, 대시보드와 운영 상태를 검증한다. [기능 지도](.cursor/skills/verify-ai-stack/features/README.md)에서 경로별 증거와 미검증 범위를 확인한다. 기존 `skills/verify-hermes-stack/`의 실제 도구·기억 검증을 재사용한다.
+
+```powershell
+$ctl = '.cursor\skills\verify-ai-stack\scripts\control_stack.py'
+$run = (python $ctl launch | ConvertFrom-Json).run_id
+python $ctl doctor --run $run
+python $ctl dashboard --run $run
+python $ctl cleanup --run $run
+python $ctl report --run $run
+```
+
+`report`는 미실행 기능과 Desktop·브라우저·후크 실행·백업 복원 등의 남은 경로를 구분한다. 일부 API 통과를 전체 환경 통과로 보고하지 않는다. 검증 후에는 실패한 실행도 정리하며 증거는 `evidence/ai-stack/runs/`에 남는다.
+
 ## 저장소 확인
 
 ```powershell
