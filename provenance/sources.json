@@ -112,8 +112,7 @@
     "snapshot_sha256": "a327ff56b33f77400f630c28b84c4b704f7fd4a9dd4a8b45a5195ab8e7d38e44",
     "redacted": false,
     "adjustments": [
-      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
-      "normalize text newlines to LF"
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
     ]
   },
   {
@@ -157,8 +156,7 @@
     "snapshot_sha256": "599fcae1805d00d8051bba5d9b93c8c9a26527675bbaa877f3e512d28de8722b",
     "redacted": false,
     "adjustments": [
-      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
-      "normalize text newlines to LF"
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
     ]
   },
   {
@@ -346,8 +344,11 @@
     "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\10-recipes-and-pitfalls.md",
     "target": "hermes/plugins/pstack/docs/guide/10-recipes-and-pitfalls.md",
     "source_sha256": "a90b89d6b9851ff104f3164d7472dd56e88d3f6ee250bd064f438261fc06de1d",
-    "snapshot_sha256": "a90b89d6b9851ff104f3164d7472dd56e88d3f6ee250bd064f438261fc06de1d",
-    "redacted": false
+    "snapshot_sha256": "fbc198ea83c61183618e552b0e71a7db59f378fe6fc2d5bd0e1e0c0c0dd15710",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
+    ]
   },
   {
     "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\README.md",
@@ -1252,8 +1253,7 @@
     "snapshot_sha256": "75370d132625a70b709e9c389edfc8aa82f7ed90b6c16eb6c2a0b68c91cb602b",
     "redacted": false,
     "adjustments": [
-      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
-      "normalize text newlines to LF"
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
     ]
   },
   {
@@ -1293,8 +1293,7 @@
     "snapshot_sha256": "fb142fb1f95d3d1e4c2aff8f65de3ca69a117d3a450cfb03f71cf15f1d89d827",
     "redacted": false,
     "adjustments": [
-      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
-      "normalize text newlines to LF"
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
     ]
   },
   {
@@ -1304,8 +1303,7 @@
     "snapshot_sha256": "e9aeedf5944ff6b21aa8c08830f663a24e9571e9fbfa553f6475939a6b0705c9",
     "redacted": false,
     "adjustments": [
-      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
-      "normalize text newlines to LF"
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
     ]
   },
   {

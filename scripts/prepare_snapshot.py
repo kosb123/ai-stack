@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OLD = 'C:/Users/jun/Documents/Codex/2026-11-01/poteto-mode/.cursor/skills/verify-hermes-stack'
 NEW = 'skills/verify-hermes-stack'
 REPLACEMENTS = {
+    'hermes/plugins/pstack/docs/guide/10-recipes-and-pitfalls.md': [
+        ('![She tastes a finished dish while robots cook from a recipe box, with pinned cards reading /how, /tdd, and cronjob above the counter.](./images/recipes.jpg)', '')],
     'skills/verify-hermes-stack/scripts/verify_stack.py': [('parents[4]', 'parents[3]')],
     'skills/verify-hermes-stack/scripts/audit_settings.py': [('parents[4]', 'parents[3]')],
     'skills/verify-hermes-stack/SKILL.md': [(OLD, NEW), (OLD.replace('/', '\\'), NEW.replace('/', '\\')),
