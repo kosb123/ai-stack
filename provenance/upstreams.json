@@ -1,0 +1,26 @@
+{
+  "omni_autotune": {
+    "path": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune",
+    "head": "5a137711308eff5c9dcaa9b50087d7bc7fe320e9",
+    "branch": "trial/argon-hindsight-first"
+  },
+  "hermes_agent": {
+    "path": "C:\\Users\\jun\\AppData\\Local\\Hermes\\hermes-agent",
+    "head": "bf0203a794a07aac3ff764972ab9087baa4e4f4e",
+    "branch": ""
+  },
+  "pstack": {
+    "path": "C:\\Users\\jun\\AppData\\Local\\Hermes\\plugins\\pstack",
+    "head": "d9454cc1ecba5f28b136deacdfe2df959cf7cdec",
+    "branch": ""
+  },
+  "hindsight_coding_agents": {
+    "package": "@vectorize-io/hindsight-coding-agents",
+    "version": "0.8.4"
+  },
+  "hindsight_hermes_plugin": {
+    "version": "1.2.3",
+    "path": "C:\\Users\\jun\\AppData\\Local\\Hermes\\plugins\\hindsight"
+  },
+  "note": "Git source SHAs describe upstream baselines. Uncommitted running sources are preserved by file hashes."
+}

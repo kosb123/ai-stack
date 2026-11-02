@@ -1,0 +1,285 @@
+[
+  {
+    "name": "hindsight-structured",
+    "data": {
+      "name": "hindsight-structured",
+      "models": [
+        {
+          "id": "hindsight-structured-model-1-agy-gemini-3-8-flash-low",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-low",
+          "providerId": "agy",
+          "weight": 9,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-structured-model-2-agy-gemini-3-flash",
+          "kind": "model",
+          "model": "agy/gemini-3-flash",
+          "providerId": "agy",
+          "weight": 15,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-structured-model-3-agy-gemini-3-8-flash-tiered",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-tiered",
+          "providerId": "agy",
+          "weight": 15,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-structured-model-4-kilocode-cohere-north-mini-code-free",
+          "kind": "model",
+          "model": "kilocode/cohere/north-mini-code:free",
+          "providerId": "kilocode",
+          "weight": 7
+        }
+      ],
+      "strategy": "priority",
+      "config": {
+        "maxRetries": 2,
+        "candidatePool": [
+          "agy",
+          "agy",
+          "agy",
+          "kilocode"
+        ]
+      },
+      "id": "1386c308-feef-4c2e-99e5-0e6033d38c93",
+      "isHidden": false,
+      "sortOrder": 4,
+      "createdAt": "2026-10-29T04:07:07.586Z",
+      "updatedAt": "2026-11-02T00:44:14.673Z",
+      "version": 2
+    },
+    "sort_order": 4,
+    "system_message": null,
+    "tool_filter_regex": null,
+    "context_cache_protection": 0
+  },
+  {
+    "name": "hermes-fast-agent",
+    "data": {
+      "name": "hermes-fast-agent",
+      "models": [
+        {
+          "id": "hermes-fast-agent-model-1-agy-gemini-3-8-flash-low",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-low",
+          "providerId": "agy",
+          "weight": 7,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hermes-fast-agent-model-2-kiro-glm-5",
+          "kind": "model",
+          "model": "kiro/glm-5",
+          "providerId": "kiro",
+          "weight": 9
+        },
+        {
+          "id": "hermes-fast-agent-model-3-agy-gemini-3-flash",
+          "kind": "model",
+          "model": "agy/gemini-3-flash",
+          "providerId": "agy",
+          "weight": 13,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hermes-fast-agent-model-4-agy-gemini-3-8-flash-tiered",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-tiered",
+          "providerId": "agy",
+          "weight": 13,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hermes-fast-agent-model-5-cline-nvidia-nemotron-3-ultra-550b-a55b-free",
+          "kind": "model",
+          "model": "cline/nvidia/nemotron-3-ultra-550b-a55b:free",
+          "providerId": "cline",
+          "weight": 8
+        },
+        {
+          "id": "hermes-fast-agent-model-6-kiro-qwen3-coder-next",
+          "kind": "model",
+          "model": "kiro/qwen3-coder-next",
+          "providerId": "kiro",
+          "weight": 8
+        },
+        {
+          "id": "hermes-fast-agent-model-7-electronhub-gemini-2-5-flash-lite",
+          "kind": "model",
+          "model": "electronhub/gemini-2.5-flash-lite",
+          "providerId": "electronhub",
+          "weight": 7
+        },
+        {
+          "id": "hermes-fast-agent-model-8-requesty-mistral-leanstral-1-5",
+          "kind": "model",
+          "model": "requesty/mistral/leanstral-1-5",
+          "providerId": "requesty",
+          "weight": 6
+        },
+        {
+          "id": "hermes-fast-agent-model-9-cline-dots-studio-dots-3-note-preview-free",
+          "kind": "model",
+          "model": "cline/dots-studio/dots-3-note-preview:free",
+          "providerId": "cline",
+          "weight": 6
+        },
+        {
+          "id": "hermes-fast-agent-model-10-kiro-deepseek-3-2",
+          "kind": "model",
+          "model": "kiro/deepseek-3.2",
+          "providerId": "kiro",
+          "weight": 6
+        },
+        {
+          "id": "hermes-fast-agent-model-11-ollama-cloud-gpt-oss-20b",
+          "kind": "model",
+          "model": "ollama-cloud/gpt-oss:20b",
+          "providerId": "ollama-cloud",
+          "weight": 6
+        },
+        {
+          "id": "hermes-fast-agent-model-12-cheaperinference-nemotron-3-5-lightning-free",
+          "kind": "model",
+          "model": "cheaperinference/nemotron-3.5-lightning-free",
+          "providerId": "cheaperinference",
+          "weight": 6
+        },
+        {
+          "id": "hermes-fast-agent-model-13-kilocode-cohere-north-mini-code-free",
+          "kind": "model",
+          "model": "kilocode/cohere/north-mini-code:free",
+          "providerId": "kilocode",
+          "weight": 6
+        }
+      ],
+      "strategy": "priority",
+      "config": {
+        "strategy": "priority",
+        "maxRetries": 2,
+        "disableSessionStickiness": true,
+        "zeroLatencyOptimizationsEnabled": true,
+        "hedging": true,
+        "hedgeDelayMs": 10000,
+        "candidatePool": [
+          "agy",
+          "kiro",
+          "agy",
+          "agy",
+          "cline",
+          "kiro",
+          "electronhub",
+          "requesty",
+          "cline",
+          "kiro",
+          "ollama-cloud",
+          "cheaperinference",
+          "kilocode"
+        ],
+        "explorationRate": 0.01,
+        "circuitBreaker": {
+          "enabled": true,
+          "failureThreshold": 5,
+          "resetTimeout": 30000
+        },
+        "retry": {
+          "maxRetries": 2,
+          "baseDelayMs": 500,
+          "maxDelayMs": 5000
+        }
+      },
+      "id": "15b18f67-1419-4c49-98f2-30c98f4d0a8b",
+      "isHidden": false,
+      "sortOrder": 5,
+      "createdAt": "2026-10-29T16:20:59.809Z",
+      "updatedAt": "2026-11-02T00:49:38.178Z",
+      "version": 2
+    },
+    "sort_order": 5,
+    "system_message": null,
+    "tool_filter_regex": null,
+    "context_cache_protection": 0
+  },
+  {
+    "name": "hindsight-refresh",
+    "data": {
+      "name": "hindsight-refresh",
+      "models": [
+        {
+          "id": "hindsight-refresh-model-1-agy-gemini-3-flash",
+          "kind": "model",
+          "model": "agy/gemini-3-flash",
+          "providerId": "agy",
+          "weight": 15,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-refresh-model-2-agy-gemini-3-8-flash-low",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-low",
+          "providerId": "agy",
+          "weight": 9,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-refresh-model-3-agy-gemini-3-8-flash-tiered",
+          "kind": "model",
+          "model": "agy/gemini-3.8-flash-tiered",
+          "providerId": "agy",
+          "weight": 15,
+          "allowedConnectionIds": [
+            "ffa45af3-1a5d-4374-9ead-72a620912356"
+          ]
+        },
+        {
+          "id": "hindsight-refresh-model-4-kilocode-cohere-north-mini-code-free",
+          "kind": "model",
+          "model": "kilocode/cohere/north-mini-code:free",
+          "providerId": "kilocode",
+          "weight": 7
+        }
+      ],
+      "strategy": "priority",
+      "config": {
+        "maxRetries": 2,
+        "candidatePool": [
+          "agy",
+          "agy",
+          "agy",
+          "kilocode"
+        ]
+      },
+      "id": "30f1c4cb-6eba-430c-919f-6a42535840c6",
+      "isHidden": false,
+      "sortOrder": 6,
+      "createdAt": "2026-10-30T08:56:42.530Z",
+      "updatedAt": "2026-11-02T00:44:18.804Z",
+      "version": 2
+    },
+    "sort_order": 6,
+    "system_message": null,
+    "tool_filter_regex": null,
+    "context_cache_protection": 0
+  }
+]

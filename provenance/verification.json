@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02T01:26:30.285090+00:00",
+  "source_files": 187,
+  "invalid_snapshot_hashes": [],
+  "changed_originals": [],
+  "health_http_status": {
+    "hindsight": 200,
+    "llamacpp": 200,
+    "dashboard": 200
+  },
+  "values_checked": 92,
+  "matched_value_paths": []
+}

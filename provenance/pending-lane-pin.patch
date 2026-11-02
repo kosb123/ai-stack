@@ -1,0 +1,275 @@
+diff --git a/README.md b/README.md
+index 9bdf3d3..3169b4c 100644
+--- a/README.md
++++ b/README.md
+@@ -25,9 +25,12 @@ Hermes와 Hindsight가 쓰는 OmniRoute 콤보 세 개의 후보 목록을 실
+   `src/sse/handlers/chat.ts`). 콤보가 그대로인지 판단할 때 모델 순서와 함께 단계별 `allowedConnectionIds`도 비교한다.
+ - 레인 항목의 선택 키 (`CONFIG["lanes"]`):
+   - `"primary": "<모델>"`: 그 모델이 레인 목록에 있으면 맨 앞으로 옮긴다(품질·공급자 규칙 없음).
+-  - `"pinned": [{"model": "<모델>", "rank": n}]`: 그 레인에만 n순위로 넣는다. 고른 모델이 아니어도 넣고, 시험·임시 제외를
+-    적용하지 않는다(전역 `pinned_models`와 같은 방식). 공용 선정의 공급자별 개수 제한(`max_per_provider_override`)에는
+-    들어가지 않으므로 다른 후보를 밀어내지 않는다. 3분 점검은 이 모델의 실패로 재선정을 일으키지 않는다.
++  - `"pinned": [{"model": "<모델>", "rank": n}]`: 그 레인에만 n순위로 넣는다. 고른 모델이 아니어도 넣고, 속도·성공률
++    시험은 적용하지 않는다(전역 `pinned_models`와 같은 방식). 다만 쓸 수 없을 때(한도 소진, 잠금, 연결 장애, 새 호출 실패)는
++    `preferred_models`와 같은 쿨다운으로 그 레인에서 임시로 빠지고(`state.json`의 `preferred_status`), 한도 회복 뒤 실제 호출
++    시험(`probe`)을 통과하면 원래 n순위로 돌아온다(`lane_pin_candidates`; 2026-11-01 사용자: 한도가 바닥난 argon이 1순위로
++    남아 429를 먼저 받고 2순위가 20-40초 늦게 답했음). 3분 점검도 이 모델의 한도 소진·회복·새 호출 실패를 감시하되, 속도 문제로 재선정을 일으키지 않는다.
++    공용 선정의 공급자별 개수 제한(`max_per_provider_override`)에는 들어가지 않으므로 다른 후보를 밀어내지 않는다.
+   - 첫 레인(`hermes-fast-agent`)은 `preferred_models`·`pinned_models`로 순서가 정해지므로 두 키는 그 뒤 레인에 쓴다.
+ - `hindsight-structured`는 `agy/gemini-4-argon-high`를 1순위로 고정한다(arena 0.98, 자체 주간 한도, 도구·구조화 시험 통과,
+   고른 모델이 아니라 그동안 안 쓰였음). antigravity 묶음(medium, gemini-3-flash)에 argon이 더해져도 레인에서 빠지지 않는다.
+diff --git a/autotune.py b/autotune.py
+index 8386bb4..45b862c 100644
+--- a/autotune.py
++++ b/autotune.py
+@@ -1070,9 +1070,12 @@ def pinned_candidate(model: str, h: dict, cat, q, conns, qual, probes: dict) ->
+     return {**d, "model": model, "provider": provider, "score": score}
+ 
+ 
+-def preferred_candidates(state, cat, hist, q, conns, qual, dry_run=False):
++def preferred_candidates(state, cat, hist, q, conns, qual, dry_run=False, models=None, availability_only=False):
+     """Keep user order, but never revive a suspended model without a successful live probe.
+ 
++    `models` replaces CONFIG preferred_models; `availability_only` keeps a model that passes the quota, connection,
++    failure and recovery gates at its rank whatever its speed or success rate (the lane pins' cooldown).
++
+     Suspension survives restarts. Quota windows gate the affected model/family (Gemini and
+     Claude/GPT have separate windows); a provider-wide gate is only used if OmniRoute says so.
+     Unknown reset times are retried every preferred_retry_minutes, not on every request.
+@@ -1080,7 +1083,7 @@ def preferred_candidates(state, cat, hist, q, conns, qual, dry_run=False):
+     selected, excluded, notes = [], [], []
+     statuses = state.setdefault("preferred_status", {})
+     tnow = now_utc()
+-    for rank, model in enumerate(CONFIG.get("preferred_models", []), 1):
++    for rank, model in enumerate(CONFIG.get("preferred_models", []) if models is None else models, 1):
+         provider = model.split("/", 1)[0]
+         entry = statuses.setdefault(model, {})
+         h = hist_for(model, hist) or {}
+@@ -1166,6 +1169,10 @@ def preferred_candidates(state, cat, hist, q, conns, qual, dry_run=False):
+                 suspend(p["err"] or "probe failed", tnow + delay, event=p["ts"])
+                 continue
+             entry.clear()
++        if availability_only:
++            entry.clear()
++            selected.append({**pinned_candidate(model, h, cat, q, conns, qual, state["probes"]), "note": "lane pin"})
++            continue
+         score, d = evaluate(model, provider, h, cat, q, conns, qual, state["probes"])
+         if score is None:
+             # User preference overrides statistical ranking, not capability or health exclusions.
+@@ -1182,23 +1189,39 @@ def preferred_candidates(state, cat, hist, q, conns, qual, dry_run=False):
+     return selected, excluded, notes
+ 
+ 
++def lane_pin_models() -> list[str]:
++    """Models pinned inside a lane (CONFIG lanes[].pinned), once each."""
++    return list(dict.fromkeys(pin["model"] for lane in CONFIG["lanes"] for pin in lane.get("pinned", [])))
++
++
++def lane_pin_candidates(state, cat, hist, q, conns, qual, dry_run=False):
++    """(candidates of lane pins that may hold their rank now, models cooling down, excluded entries, probe notes).
++    2026-11-01 user: a lane pin stays first by design, but gets the preferred models' cooldown: out while its quota is
++    exhausted or it keeps failing, back at its rank after a passing recovery probe."""
++    models = lane_pin_models()
++    ready, out, notes = preferred_candidates(state, cat, hist, q, conns, qual, dry_run, models, availability_only=True)
++    return {d["model"]: d for d in ready}, {m for m in models if m not in {d["model"] for d in ready}}, out, notes
++
++
+ def preferred_check_reasons(state, con, current):
+     """Cheap 3-minute check: notice quota loss/recovery even when fallback traffic succeeds."""
+     q, reasons, tnow = quotas(con), [], now_utc()
+-    for model in CONFIG.get("preferred_models", []):
++    lane_only = [m for m in lane_pin_models() if m not in CONFIG.get("preferred_models", [])]
++    for model in CONFIG.get("preferred_models", []) + lane_only:
+         if is_pinned(model):
+             continue  # a re-tune never moves a pinned model, so its failures are no reason to run one
+         provider = model.split("/", 1)[0]
+         remaining, _, why = quota_for(provider, model, q)
+         entry = state.get("preferred_status", {}).get(model) or {}
+-        if model in current and why:
++        active = model in current or (model in lane_only and not entry.get("suspended"))  # a lane pin is in unless cooling
++        if active and why:
+             reasons.append(f"preferred {model}: {why}")
+-        elif model not in current:
++        elif not active:
+             due = parse_ts(entry.get("retry_at"))
+             refilled = entry.get("reason", "").startswith("quota '") and remaining is not None and remaining > 0.5
+             if not why and (refilled or not due or due <= tnow):
+                 reasons.append(f"preferred {model}: recovery check due")
+-        if model in current:
++        if active:
+             last = con.execute("""select status, timestamp from call_logs
+                 where requested_model = ? and path like '%chat/completions%'
+                 and (status != 499 or duration >= ?) order by timestamp desc limit 1""",
+@@ -1342,12 +1365,17 @@ def model_family(model: str) -> str:
+     return m.group(0) if m else name
+ 
+ 
+-def apply_lane_rules(lane: dict, order: list[dict], selected: list[dict], lane_pins: dict[str, dict]) -> list[dict]:
+-    """The lane's own "primary" (to #1 if present) and "pinned" (forced in at its rank) on top of `order`."""
++def apply_lane_rules(lane: dict, order: list[dict], selected: list[dict], lane_pins: dict[str, dict],
++                     cooling: frozenset | set = frozenset()) -> list[dict]:
++    """The lane's own "primary" (to #1 if present) and "pinned" (forced in at its rank) on top of `order`;
++    a pinned model in `cooling` is left out of the lane until it recovers."""
+     first = next((d for d in order if d["model"] == lane.get("primary")), None)
+     if first:
+         order = [first] + [d for d in order if d is not first]
+     for pin in lane.get("pinned", []):
++        if pin["model"] in cooling:
++            order = [x for x in order if x["model"] != pin["model"]]
++            continue
+         d = next((x for x in selected if x["model"] == pin["model"]), None) or lane_pins.get(pin["model"])
+         if d is None:
+             continue
+@@ -1356,16 +1384,18 @@ def apply_lane_rules(lane: dict, order: list[dict], selected: list[dict], lane_p
+     return order
+ 
+ 
+-def lane_orders(selected: list[dict], lane_pins: dict[str, dict] | None = None) -> list[tuple[dict, list[dict]]]:
++def lane_orders(selected: list[dict], lane_pins: dict[str, dict] | None = None,
++                cooling: frozenset | set = frozenset()) -> list[tuple[dict, list[dict]]]:
+     """[(lane, ordered candidates)]: each lane after the first gets as #1 the best candidate on a provider and
+     model family no earlier lane starts with; the rest of the list follows in score order. `lane_pins` holds the
+-    candidates of lane-pinned models (model -> candidate) that are not in `selected`."""
++    candidates of lane-pinned models (model -> candidate) that are not in `selected`; `cooling` holds the pinned
++    models that must not hold a lane rank right now."""
+     lane_pins = lane_pins or {}
+     out, used_prov, used_fam = [], set(), set()
+     for i, lane in enumerate(CONFIG["lanes"]):
+         if lane.get("structured"):
+             # Hindsight lane: same score order (pinned #1 kept), only candidates that passed probe_structured
+-            order = apply_lane_rules(lane, [d for d in selected if d.get("structured_ok")], selected, lane_pins)
++            order = apply_lane_rules(lane, [d for d in selected if d.get("structured_ok")], selected, lane_pins, cooling)
+             if order:
+                 out.append((lane, order))
+             continue
+@@ -1379,7 +1409,7 @@ def lane_orders(selected: list[dict], lane_pins: dict[str, dict] | None = None)
+                        or selected[0])
+         if primary is None:
+             continue
+-        order = apply_lane_rules(lane, [primary] + [d for d in selected if d is not primary], selected, lane_pins)
++        order = apply_lane_rules(lane, [primary] + [d for d in selected if d is not primary], selected, lane_pins, cooling)
+         used_prov.add(provider_group(order[0]["provider"]))
+         used_fam.add(model_family(order[0]["model"]))
+         out.append((lane, order))
+@@ -1446,9 +1476,11 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
+     pins = route_pins(conns)
+ 
+     preferred, preferred_out, probe_lines = preferred_candidates(state, cat, hist, q, conns, qual, dry_run)
++    lane_pins, lane_cooling, lane_pin_out, lane_pin_lines = lane_pin_candidates(state, cat, hist, q, conns, qual, dry_run)
++    probe_lines += lane_pin_lines
+     if not dry_run:
+         for model, prov in pick_probes(hist, cat, q, conns, qual, state["probes"]):
+-            if model in CONFIG.get("preferred_models", []):
++            if model in CONFIG.get("preferred_models", []) or model in lane_cooling:
+                 continue  # preferred admission/recovery has its own quota gate and retry clock
+             res = probe(model)
+             res["provider"] = prov
+@@ -1461,7 +1493,7 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
+         universe.setdefault(m, p)  # a pick with no history yet is still evaluated (and admission-probed)
+     for m, p in state["probes"].items():
+         universe.setdefault(m, p.get("provider") or (cat.get(m) or {}).get("owned_by") or m.split("/")[0])
+-    scored, excluded = [], list(preferred_out)
++    scored, excluded = [], list(preferred_out) + lane_pin_out
+     for m, prov in universe.items():
+         if m in CONFIG.get("preferred_models", []):
+             continue  # a suspended preferred model cannot sneak back in via ordinary ranking
+@@ -1600,10 +1632,7 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
+                     d["structured_ok"], d["structured_why"] = False, f"hung {hangs[d['model']]}x in 48h"
+                 else:
+                     d["structured_ok"], d["structured_why"] = structured_ok(state, d["model"], dry_run)
+-        lane_pins = {pin["model"]: pinned_candidate(pin["model"], hist_for(pin["model"], hist) or {}, cat, q, conns,
+-                                                    qual, state["probes"])
+-                     for lane in CONFIG["lanes"] for pin in lane.get("pinned", [])}
+-        for lane, order in lane_orders(lane_base, lane_pins)[1:]:
++        for lane, order in lane_orders(lane_base, lane_pins, lane_cooling)[1:]:
+             res = "dry run" if dry_run else sync_lane(lane["combo"], order, combos, pins)
+             if not dry_run:
+                 log(f"lane {lane['combo']}: {res}")
+diff --git a/test_preferred.py b/test_preferred.py
+index cdbe37e..d983d0f 100644
+--- a/test_preferred.py
++++ b/test_preferred.py
+@@ -699,6 +699,83 @@ class LanePinnedCheckTests(unittest.TestCase):
+         self.run_check("grok-cli/grok-4.7").assert_called_once()
+ 
+ 
++class LanePinCooldownTests(_LifecycleBase):
++    """2026-11-01 user: a lane-pinned first member (argon in the Hindsight lane) stays first by design, but while its
++    quota is exhausted it leaves #1 (it answered 429 first, then the next member 20-40 s later) and returns to #1
++    after a passing recovery probe, the same cooldown preferred models get."""
++
++    def setUp(self):
++        super().setUp()
++        patcher = patch.dict(a.CONFIG, {"preferred_models": [], "pinned_models": []})
++        patcher.start()
++        self.addCleanup(patcher.stop)
++        self.state = {"probes": {ARGON: {**self.good_probe(), "provider": "agy"}}}
++        self.conns = {"agy": [{"id": "agy-on", "active": True, "test": "ok", "rl_until": None}]}
++        self.cat = {ARGON: {"context_length": 1048576, "capabilities": {"tool_calling": True}}}
++        self.sel = [_cand("agy/gemini-3-flash"), _cand("grok-cli/grok-4.7")]
++
++    def exhaust(self, until):
++        self.quota = {"agy": {"gemini-4-argon-low": {"remaining": 0, "exhausted": True, "reset": until.isoformat()}}}
++
++    def hindsight_order(self):
++        pins, cooling, _, _ = a.lane_pin_candidates(self.state, self.cat, self.hist, self.quota, self.conns, {})
++        orders = a.lane_orders(self.sel, pins, cooling)
++        return [d["model"] for lane, order in orders if lane["combo"] == "hindsight-structured" for d in order]
++
++    def test_healthy_pin_stays_first(self):
++        self.assertEqual(self.hindsight_order()[0], ARGON)
++
++    def test_exhausted_pin_leaves_rank_one_and_returns_after_recovery_probe(self):
++        self.exhaust(self.now + timedelta(hours=3))
++        with patch.object(a, "probe") as probe:
++            order = self.hindsight_order()
++        self.assertNotIn(ARGON, order)
++        self.assertEqual(order[0], "agy/gemini-3-flash")
++        probe.assert_not_called()
++        self.now += timedelta(hours=4)
++        self.quota = {}
++        with patch.object(a, "probe", return_value={**self.good_probe(), "provider": "agy"}) as probe:
++            order = self.hindsight_order()
++        probe.assert_called_once_with(ARGON)
++        self.assertEqual(order[0], ARGON)
++
++    def test_failed_recovery_probe_keeps_pin_out_until_retry(self):
++        self.exhaust(self.now + timedelta(hours=1))
++        self.hindsight_order()
++        self.now += timedelta(hours=2)
++        self.quota = {}
++        failed = {**self.good_probe(), "ok": False, "status": 429, "err": "still exhausted", "provider": "agy"}
++        with patch.object(a, "probe", return_value=failed) as probe:
++            self.assertNotIn(ARGON, self.hindsight_order())
++            self.assertNotIn(ARGON, self.hindsight_order())
++        self.assertEqual(probe.call_count, 1)
++
++    def test_slow_pin_without_an_availability_problem_keeps_its_rank(self):
++        self.hist = {ARGON: {"n": 5, "ok": 1, "last": None}}
++        self.state["probes"][ARGON]["latency"] = 200.0
++        self.assertEqual(self.hindsight_order()[0], ARGON)
++
++    def test_cooling_pin_is_dropped_even_when_ordinary_ranking_selected_it(self):
++        self.exhaust(self.now + timedelta(hours=3))
++        self.sel.insert(0, _cand(ARGON))
++        self.assertNotIn(ARGON, self.hindsight_order())
++
++    def test_check_watches_lane_pin_quota_and_recovery_without_looping(self):
++        con = sqlite3.connect(":memory:")
++        self.addCleanup(con.close)
++        con.execute("create table call_logs(requested_model, path, status, duration, timestamp)")
++        with patch.object(a, "quotas", return_value={}):
++            self.assertEqual(a.preferred_check_reasons(self.state, con, set()), [])
++        self.exhaust(self.now + timedelta(hours=3))
++        with patch.object(a, "quotas", return_value=self.quota):
++            self.assertEqual(len(a.preferred_check_reasons(self.state, con, set())), 1)
++            self.hindsight_order()
++            self.assertEqual(a.preferred_check_reasons(self.state, con, set()), [])
++        self.now += timedelta(hours=4)
++        with patch.object(a, "quotas", return_value={}):
++            self.assertEqual(len(a.preferred_check_reasons(self.state, con, set())), 1)
++
++
+ class IgnoredBudgetTests(unittest.TestCase):
+     """2026-10-30: kiro was marked ignore_budget_providers, yet probe_affordable still read the stale 0% pool."""
+ 

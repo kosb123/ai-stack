@@ -1,0 +1,11 @@
+{
+  "base_url": "http://127.0.0.1:18434/v1",
+  "api_key": "${LOCAL_SECRET}",
+  "pid": 23380,
+  "create_time": 1792412939.9761894,
+  "start_time": 179241293998,
+  "executable": "C:\\Users\\jun\\AppData\\Local\\hermes\\tools\\llamacpp-cuda-11370-win32-x64\\llama-server.exe",
+  "owner_pid": 27620,
+  "owner_create_time": 1792410396.887351,
+  "owner_start_time": 179241039689
+}

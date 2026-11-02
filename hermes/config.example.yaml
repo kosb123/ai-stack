@@ -1,0 +1,651 @@
+_config_version: 51
+database:
+  journal_mode: wal
+runtime:
+  nofile_soft_limit: 4096
+attachments:
+  storage: hermes-home
+plugins:
+  clone_timeout_seconds: 300
+  enabled:
+  - disk-cleanup
+  - pstack
+  - rtk-rewrite
+  - orca-status
+  disabled: []
+model:
+  default: hermes-fast-agent
+  provider: custom:omni
+  base_url: http://127.0.0.1:20128/v1
+  api_mode: chat_completions
+kanban:
+  review_dispatch: true
+  max_in_progress: 2
+  failure_limit: 3
+  orchestrator_profile: ''
+  default_assignee: ''
+cron:
+  catch_up_missed: true
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  home_mode: auto
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+  container_cpu: 1
+  container_memory: 5120
+  container_disk: 51200
+  container_persistent: true
+  client_env_passthrough:
+  - ORCA_AGENT_PANE
+  - ORCA_AGENT_LAUNCH
+  - ORCA_TAB_ID
+  - ORCA_WORKTREE_ID
+  - ORCA_AGENT_HOOK_ENDPOINT
+  - ORCA_AGENT_HOOK_ENV
+  - ORCA_AGENT_HOOK_VERSION
+browser:
+  inactivity_timeout: 120
+  extension_control:
+    enabled: false
+  use_real_profile: true
+  cloud_provider: nous
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: true
+  non_interactive_hard_stop_enabled: true
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+compression:
+  enabled: true
+  checkpoint_required: false
+  progress_notices: true
+  threshold: 0.8
+  codex_gpt55_autoraise: true
+  target_ratio: 0.2
+  protect_last_n: 20
+  min_tail_user_messages: 3
+  max_attempts: 3
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: null
+  protect_first_n: 3
+  idle_compact_after_seconds: 3600
+  hygiene_max_turn_hold_seconds: 10
+  proactive_prune_tokens: 30000
+  proactive_prune_min_result_chars: 8000
+  proactive_prune_min_reclaim_tokens: 4096
+  micro_compact: false
+  threshold_tokens: 96000
+prompt_caching:
+  cache_ttl: 5m
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+  user_char_limit: 1375
+  nudge_interval: 10
+  provider: hindsight
+max_concurrent_sessions: null
+group_sessions_per_user: true
+streaming:
+  enabled: true
+skills:
+  creation_nudge_interval: 15
+  external_dirs:
+  - C:/Users/jun/AppData/Local/hermes/shared-skills
+  - C:/Users/jun/AppData/Local/hermes/plugins/pstack/skills
+  disabled:
+  - requesting-code-review
+  - subagent-driven-development
+  - systematic-debugging
+  - test-driven-development
+agent:
+  max_turns: 500
+  verbose: false
+  reasoning_effort: low
+  service_tier: ''
+  fast_auto_seconds: 60
+  personalities: {}
+  reasoning_overrides:
+    hermes-fast-agent: low
+    Qwen3.8-27B-UD-Q4_K_M: low
+    auto/best-chat: low
+    auto/best-coding: low
+    auto/best-reasoning: low
+    auto/fast: low
+    auto/best-vision: low
+gateway:
+  signal_interrupt_grace_timeout: 1
+  delivery_ledger: true
+  platform_connect_timeout: 30
+  loop_watchdog: true
+  loop_watchdog_probe_interval_s: 30.0
+  loop_watchdog_probe_timeout_s: 10.0
+  loop_watchdog_max_strikes: 3
+  allow_all_users: false
+  bot_loop_guard:
+    enabled: true
+    max_events: 20
+    window_seconds: 300
+    cooldown_seconds: 600
+  startup_watchdog: true
+  startup_watchdog_timeout_seconds: 300
+  write_sessions_json: true
+  multiplex_profiles: true
+  auto_multiplex_migration: true
+  profile_routes:
+  - name: blog-channel
+    platform: discord
+    guild_id: '1556874780085588079'
+    chat_id: '1561958129611186276'
+    profile: blog
+  scale_to_zero:
+    idle_timeout_minutes: 2
+  restart_loop_guard:
+    max_restarts: 3
+    window_seconds: 60
+    max_gap_seconds: 300
+  respawn_storm:
+    max_starts: 5
+    window_seconds: 120
+  message_timestamps:
+    enabled: false
+  max_inbound_media_bytes: 134217728
+  trust_env: true
+  strict: false
+  media_delivery_allow_dirs: []
+  trust_recent_files: true
+  trust_recent_files_seconds: 600
+  api_server:
+    max_concurrent_runs: 10
+    history_tool_output_max_chars: 0
+platform_toolsets:
+  cli:
+  - a2a
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+  telegram:
+  - a2a
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+  discord:
+  - a2a
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - discord
+  - discord_admin
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+  whatsapp:
+  - hermes-whatsapp
+  slack:
+  - hermes-slack
+  signal:
+  - hermes-signal
+  qqbot:
+  - hermes-qqbot
+  yuanbao:
+  - hermes-yuanbao
+  teams:
+  - hermes-teams
+  google_chat:
+  - hermes-google_chat
+stt:
+  enabled: true
+  local:
+    model: base
+  language: en
+  openai:
+    model: whisper-1
+    language: ''
+    timeout: 60
+    max_retries: 1
+  provider: nous
+code_execution:
+  timeout: 300
+  max_tool_calls: 50
+delegation:
+  max_iterations: 250
+  max_concurrent_children: 3
+  reasoning_effort: low
+display:
+  compact: false
+  cleanup_progress: false
+  suppress_warning_notifications: false
+  busy_input_mode: interrupt
+  background_process_notifications: concise
+  bell_on_complete: false
+  bell_on_prompt: false
+  streaming: true
+  skin: default
+  language: ko
+  platforms:
+    discord:
+      tool_progress: all
+      show_reasoning: true
+  tool_progress_command: true
+telemetry:
+  shared_metrics:
+    enabled: false
+    send: false
+    offer_version: 2
+auth:
+  adopt_external_logins: true
+  codex_login_flow: device_code
+updates:
+  check: true
+  pre_update_backup: quick
+  backup_keep: 5
+  non_interactive_local_changes: stash
+local_runtime:
+  enabled: false
+approvals:
+  mode: 'off'
+  deny:
+  - sudo *
+  - '*authorized_keys*'
+  - '*curl*|*sh*'
+  - '*wget*|*sh*'
+  - '*irm*|*iex*'
+  - '*iwr*|*iex*'
+  - git push --force*
+  - git push -f*
+  - rm -rf /*
+  - format *
+  - '*Remove-Item*-Recurse*C:\*'
+model_aliases:
+  omni:
+    model: hermes-fast-agent
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+  omni-coding:
+    model: auto/chat:reliable
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+  omni-reasoning:
+    model: auto/chat:reliable
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+  omni-fast:
+    model: hermes-fast-agent
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+  local:
+    model: Qwen3.8-27B-UD-Q4_K_M
+    provider: llamacpp
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
+fallback_providers:
+- provider: freellmapi
+  model: auto:hermes
+auxiliary:
+  kanban_decomposer:
+    provider: auto
+    model: ''
+  goal_judge:
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+    model: gemini/gemini-3.1-flash-lite
+    timeout: 120
+    reasoning_effort: low
+    fallback_chain:
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: antigravity/gemini-3.1-flash-lite
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: hermes-fast-agent
+  compression:
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+    model: antigravity/gemini-3.1-flash-lite
+    timeout: 300
+    fallback_chain:
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: gemini/gemini-3.1-flash-lite
+    - provider: custom
+      base_url: http://127.0.0.1:3001/v1
+      key_env: FREELLMAPI_API_KEY
+      model: auto:hermes
+  title_generation:
+    provider: auto
+    model: ''
+    timeout: 30
+    model_upgrade_enabled: false
+  background_review:
+    provider: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+    model: gemini/gemini-3.1-flash-lite
+    timeout: 300
+    reasoning_effort: low
+    max_input_tokens: 48000
+    fallback_chain:
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: antigravity/gemini-3.1-flash-lite
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: hermes-fast-agent
+  mcp:
+    provider: auto
+    model: ''
+  approval:
+    provider: auto
+    model: ''
+    timeout: 60
+    fallback_chain:
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: antigravity/gemini-3.1-flash-lite
+    - provider: custom
+      base_url: http://127.0.0.1:20128/v1
+      key_env: OMNIROUTE_API_KEY
+      model: hermes-fast-agent
+providers:
+  llamacpp:
+    name: llama.cpp (Qwen3.8 27B)
+    base_url: http://127.0.0.1:18434/v1
+    api_key: ${LOCAL_SECRET}
+    default_model: Qwen3.8-27B-UD-Q4_K_M
+    api_mode: chat_completions
+    models:
+      Qwen3.8-27B-UD-Q4_K_M:
+        context_length: 163840
+  omni:
+    name: omni
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+    default_model: hermes-fast-agent
+    discover_models: false
+    models:
+    - hermes-fast-agent
+    api_mode: chat_completions
+    extra_headers:
+      x-omniroute-no-memory: 'true'
+    stale_timeout_seconds: 360
+  custom:
+    name: custom
+    base_url: http://127.0.0.1:20128/v1
+    key_env: OMNIROUTE_API_KEY
+    default_model: hermes-fast-agent
+    discover_models: false
+    models:
+    - hermes-fast-agent
+    api_mode: chat_completions
+    extra_headers:
+      x-omniroute-no-memory: 'true'
+    stale_timeout_seconds: 360
+  freellmapi:
+    name: freellmapi
+    base_url: http://127.0.0.1:3001/v1
+    key_env: FREELLMAPI_API_KEY
+    default_model: auto:hermes
+    api_mode: chat_completions
+    extra_headers:
+      User-Agent: hermes-agent
+    context_length: 262144
+    models:
+      auto:hermes: {}
+      auto: {}
+known_plugin_toolsets:
+  cli:
+  - a2a
+  discord:
+  - a2a
+  telegram:
+  - a2a
+known_builtin_toolsets:
+  cli:
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - discord
+  - discord_admin
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - stt
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+  discord:
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - discord
+  - discord_admin
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - stt
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+  telegram:
+  - browser
+  - clarify
+  - code_execution
+  - computer_use
+  - connections
+  - context_engine
+  - cronjob
+  - delegation
+  - discord
+  - discord_admin
+  - file
+  - image_gen
+  - kanban
+  - memory
+  - session_search
+  - skills
+  - stt
+  - terminal
+  - todo
+  - tts
+  - video
+  - video_gen
+  - vision
+  - web
+  - x_search
+  - yuanbao
+mcp_servers:
+  airtable:
+    url: https://mcp.airtable.com/mcp
+    auth: oauth
+    enabled: false
+  algolia:
+    url: https://mcp.algolia.com/mcp
+    auth: oauth
+    enabled: false
+  gitlab:
+    url: https://gitlab.com/api/v4/mcp
+    auth: oauth
+    enabled: false
+    tools:
+      exclude:
+      - get_mcp_server_version
+      - list_duo_sessions
+  hindsight_kb:
+    url: http://localhost:8888/mcp/jun/
+    tools:
+      include:
+      - list_mental_models
+      - get_mental_model
+      - get_knowledge_base_tree
+      - search_knowledge_base
+      - get_knowledge_page
+sessions:
+  auto_archive: false
+web:
+  backend: nous
+tts:
+  provider: nous
+image_gen:
+  provider: nous
+tools:
+  tool_search:
+    defer:
+    - computer_use
+    - session_search
+    - image_generate
+    - todo_list
+    - process_manage
+    - cronjob_manage
+    - drive_preview
+    - gui_tour
+    - desktop_preview
+    - annotate_preview
+    - manage_catalog
+    - show_tip
+    - desktop_project
+    - close_terminal
+    - apply_layout
+    - read_terminal
+    - read_window_below
+    - focus_pane
+    - browser_vault_list
+    - browser_vault_unlock
+    - browser_vault_fill
+    - browser_vault_save_login
+    - browser_vault_enter_code
+    - text_to_speech
+    - skill_manage
+    - vision_analyze
+    - kanban_create
+    - kanban_attach_url
+    - kanban_complete
+    - kanban_block
+    - kanban_schedule
+    - kanban_request_review
+    - kanban_request_changes
+    - kanban_heartbeat
+    - kanban_attach
+    - kanban_list
+    - kanban_show
+    - kanban_comment
+tool_output:
+  max_bytes: 20000
+file_read_max_chars: 40000
+goals:
+  max_turns: 200
+checkpoints:
+  enabled: true
+timezone: Asia/Seoul
+platforms:
+  discord:
+    enabled: false
+  telegram:
+    enabled: false

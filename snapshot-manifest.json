@@ -1,0 +1,939 @@
+{
+  "entries": [
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\autotune.py",
+      "target": "omniroute/autotune/autotune.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\bulk_discover.py",
+      "target": "omniroute/autotune/bulk_discover.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\verify_cycle.py",
+      "target": "omniroute/autotune/verify_cycle.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\test_preferred.py",
+      "target": "omniroute/autotune/test_preferred.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\measure.py",
+      "target": "omniroute/autotune/measure.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\sweep.py",
+      "target": "omniroute/autotune/sweep.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\selected_models.json",
+      "target": "omniroute/autotune/selected_models.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\README.md",
+      "target": "omniroute/autotune/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\hs_probe.py",
+      "target": "omniroute/autotune/survey/hs_probe.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\survey.py",
+      "target": "omniroute/autotune/survey/survey.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\api.py",
+      "target": "omniroute/dashboard/api.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\app.js",
+      "target": "omniroute/dashboard/app.js",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\catalog.py",
+      "target": "omniroute/dashboard/catalog.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\collect.py",
+      "target": "omniroute/dashboard/collect.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\index.html",
+      "target": "omniroute/dashboard/index.html",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\README.md",
+      "target": "omniroute/dashboard/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\server.py",
+      "target": "omniroute/dashboard/server.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\style.css",
+      "target": "omniroute/dashboard/style.css",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\test_dashboard.py",
+      "target": "omniroute/dashboard/test_dashboard.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\config.yaml",
+      "target": "hermes/config.example.yaml",
+      "kind": "yaml"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\.env",
+      "target": "hermes/.env.example",
+      "kind": "env"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\autotest\\config.yaml",
+      "target": "hermes/profiles/autotest/config.example.yaml",
+      "kind": "yaml"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\blog\\config.yaml",
+      "target": "hermes/profiles/blog/config.example.yaml",
+      "kind": "yaml"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\campaign\\config.yaml",
+      "target": "hermes/profiles/campaign/config.example.yaml",
+      "kind": "yaml"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\hindsight\\config.json",
+      "target": "hermes/hindsight.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\scripts\\omni_monitor.py",
+      "target": "hermes/ops/omni_monitor.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\scripts\\omni_report.py",
+      "target": "hermes/ops/omni_report.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Start-External-LlamaCpp.ps1",
+      "target": "hermes/llamacpp/Start-External-LlamaCpp.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Watch-LocalLlama.ps1",
+      "target": "hermes/llamacpp/Watch-LocalLlama.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Launch-LocalLLM.ps1",
+      "target": "hermes/llamacpp/Launch-LocalLLM.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\presets.ini",
+      "target": "hermes/llamacpp/presets.ini",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\server.json",
+      "target": "hermes/llamacpp/server.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\__init__.py",
+      "target": "hermes/plugins/pstack/__init__.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\AGENTS.md",
+      "target": "hermes/plugins/pstack/AGENTS.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\CLAUDE.md",
+      "target": "hermes/plugins/pstack/CLAUDE.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\01-setup.md",
+      "target": "hermes/plugins/pstack/docs/guide/01-setup.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\02-poteto-mode.md",
+      "target": "hermes/plugins/pstack/docs/guide/02-poteto-mode.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\03-understand.md",
+      "target": "hermes/plugins/pstack/docs/guide/03-understand.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\04-design.md",
+      "target": "hermes/plugins/pstack/docs/guide/04-design.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\05-build-and-clean.md",
+      "target": "hermes/plugins/pstack/docs/guide/05-build-and-clean.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\06-verify-and-ship.md",
+      "target": "hermes/plugins/pstack/docs/guide/06-verify-and-ship.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\07-overnight.md",
+      "target": "hermes/plugins/pstack/docs/guide/07-overnight.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\08-principles.md",
+      "target": "hermes/plugins/pstack/docs/guide/08-principles.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\09-make-it-yours.md",
+      "target": "hermes/plugins/pstack/docs/guide/09-make-it-yours.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\10-recipes-and-pitfalls.md",
+      "target": "hermes/plugins/pstack/docs/guide/10-recipes-and-pitfalls.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\README.md",
+      "target": "hermes/plugins/pstack/docs/guide/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\LICENSE",
+      "target": "hermes/plugins/pstack/LICENSE",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\plugin.yaml",
+      "target": "hermes/plugins/pstack/plugin.yaml",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\README.md",
+      "target": "hermes/plugins/pstack/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\scripts\\check_refs.py",
+      "target": "hermes/plugins/pstack/scripts/check_refs.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\scripts\\check_version.py",
+      "target": "hermes/plugins/pstack/scripts/check_version.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\architect\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/architect/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\arena\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/arena/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\automate-me\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/automate-me/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\benchmark-checklist\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/benchmark-checklist/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\blast-radius\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/blast-radius/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\bro\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/bro/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-formal-verification-skill\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/create-formal-verification-skill/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\create-note.md",
+      "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\README.md",
+      "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\search.md",
+      "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/create-verification-skill/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\deslop\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/deslop/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\figure-it-out\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/figure-it-out/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\hermesbot\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/hermesbot/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\how\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/how/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\in-your-own-words\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/in-your-own-words/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\interrogate\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/interrogate/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\maintain-formal-verification-skill\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/maintain-formal-verification-skill/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\maintain-verification-skill\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/maintain-verification-skill/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\no-comments\\references\\comment-sicko.md",
+      "target": "hermes/plugins/pstack/skills/no-comments/references/comment-sicko.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\no-comments\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/no-comments/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\authoring-a-skill.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/authoring-a-skill.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autonomous-run.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autopilot-full.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autopilot-stack.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\babysit.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/babysit.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\bug-fix.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/bug-fix.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\eval.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/eval.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\feature.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/feature.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\figure-it-out.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/figure-it-out.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\hillclimb.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/hillclimb.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\investigation.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/investigation.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\multi-phase-plan.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\opening-a-pr.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\orchestrate.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/orchestrate.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\pause-safely.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/pause-safely.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\perf-issue.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/perf-issue.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\prototype.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/prototype.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\refactoring.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/refactoring.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\runtime-forensics.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/runtime-forensics.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\session-pickup.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/session-pickup.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\shipping.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/shipping.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\trace-forensics.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/trace-forensics.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\visual-parity.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/visual-parity.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\worktree-cleanup.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\scripts\\worktree-audit.sh",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/poteto-mode/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-attack-the-premise\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-attack-the-premise/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-boundary-discipline\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-boundary-discipline/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-build-the-lever\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-build-the-lever/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-encode-lessons-in-structure\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-exhaust-the-design-space\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-experience-first\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-experience-first/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-explain-the-number\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-explain-the-number/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-fix-root-causes\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-fix-root-causes/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-foundational-thinking\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-foundational-thinking/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-guard-the-context-window\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-laziness-protocol\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-laziness-protocol/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-make-operations-idempotent\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-migrate-callers-then-delete-legacy-apis\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-minimize-reader-load\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-model-the-domain\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-model-the-domain/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-never-block-on-the-human\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-outcome-oriented-execution\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-prove-it-works\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-prove-it-works/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-redesign-from-first-principles\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-separate-before-serializing-shared-state\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-sequence-verifiable-units\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-subtract-before-you-add\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-test-behavior-not-implementation\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-type-system-discipline\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/principle-type-system-discipline/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\recall\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/recall/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\divergent-reviewer.md",
+      "target": "hermes/plugins/pstack/skills/reflect/references/divergent-reviewer.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\judgment-reviewer.md",
+      "target": "hermes/plugins/pstack/skills/reflect/references/judgment-reviewer.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\synthesizer.md",
+      "target": "hermes/plugins/pstack/skills/reflect/references/synthesizer.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\tooling-reviewer.md",
+      "target": "hermes/plugins/pstack/skills/reflect/references/tooling-reviewer.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/reflect/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\setup-pstack\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/setup-pstack/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\sharpen\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/sharpen/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\references\\decision-log-template.tsv",
+      "target": "hermes/plugins/pstack/skills/show-me-your-work/references/decision-log-template.tsv",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\scripts\\log.sh",
+      "target": "hermes/plugins/pstack/skills/show-me-your-work/scripts/log.sh",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/show-me-your-work/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\swarm\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/swarm/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\tdd\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/tdd/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\teach\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/teach/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\technical-writing\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/technical-writing/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\typescript-best-practices\\references\\patterns.md",
+      "target": "hermes/plugins/pstack/skills/typescript-best-practices/references/patterns.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\typescript-best-practices\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/typescript-best-practices/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\unslop\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/unslop/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\epistemics.md",
+      "target": "hermes/plugins/pstack/skills/why/references/epistemics.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\investigator-prompt.md",
+      "target": "hermes/plugins/pstack/skills/why/references/investigator-prompt.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\source-playbook.md",
+      "target": "hermes/plugins/pstack/skills/why/references/source-playbook.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\code-archaeology.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/code-archaeology.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\databricks.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/databricks.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\datadog.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/datadog.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\incident-postmortem.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/incident-postmortem.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\linear.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/linear.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\notion.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/notion.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\sentry.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/sentry.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\slack.md",
+      "target": "hermes/plugins/pstack/skills/why/references/sources/slack.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\synthesizer-prompt.md",
+      "target": "hermes/plugins/pstack/skills/why/references/synthesizer-prompt.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\SKILL.md",
+      "target": "hermes/plugins/pstack/skills/why/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "E:\\hindsight\\run_api.py",
+      "target": "hindsight/ops/run_api.py",
+      "kind": "copy"
+    },
+    {
+      "source": "E:\\hindsight\\start-hindsight.ps1",
+      "target": "hindsight/ops/start-hindsight.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "E:\\hindsight\\hindsight.env",
+      "target": "hindsight/native.env.example",
+      "kind": "env"
+    },
+    {
+      "source": "C:\\Users\\jun\\.hindsight\\hindsight.env",
+      "target": "hindsight/legacy-client.env.example",
+      "kind": "env"
+    },
+    {
+      "source": "C:\\Users\\jun\\.hindsight\\coding-agent.json",
+      "target": "hindsight/coding-agent.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\.codex\\hooks.json",
+      "target": "integrations/codex/hooks.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\codex-mcp.json",
+      "target": "integrations/codex/hindsight-mcp.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\.hindsight\\backup-hindsight.ps1",
+      "target": "hindsight/ops/backup-hindsight.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\.hindsight\\unpause-pages.py",
+      "target": "hindsight/ops/unpause-pages.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\combos.md",
+      "target": "skills/verify-hermes-stack/features/combos.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\hermes-tool.md",
+      "target": "skills/verify-hermes-stack/features/hermes-tool.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\local-tool.md",
+      "target": "skills/verify-hermes-stack/features/local-tool.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\memory.md",
+      "target": "skills/verify-hermes-stack/features/memory.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\README.md",
+      "target": "skills/verify-hermes-stack/features/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\session-routing.md",
+      "target": "skills/verify-hermes-stack/features/session-routing.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\audit_settings.py",
+      "target": "skills/verify-hermes-stack/scripts/audit_settings.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\test_verifier.py",
+      "target": "skills/verify-hermes-stack/scripts/test_verifier.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\verify_stack.py",
+      "target": "skills/verify-hermes-stack/scripts/verify_stack.py",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\SKILL.md",
+      "target": "skills/verify-hermes-stack/SKILL.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\README.md",
+      "target": "integrations/claude-code/README.md",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\autodev-loop.ps1",
+      "target": "integrations/claude-code/scripts/autodev-loop.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\claude-best.ps1",
+      "target": "integrations/claude-code/scripts/claude-best.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\claude-free.ps1",
+      "target": "integrations/claude-code/scripts/claude-free.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\install.ps1",
+      "target": "integrations/claude-code/scripts/install.ps1",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\.omniroute\\.env",
+      "target": "omniroute/.env.example",
+      "kind": "env"
+    },
+    {
+      "source": "C:\\Users\\jun\\.omniroute\\omniroute-server.vbs",
+      "target": "omniroute/ops/omniroute-server.vbs",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\combos.json",
+      "target": "omniroute/combos.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\settings.json",
+      "target": "omniroute/settings.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\connections.json",
+      "target": "omniroute/connections.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\nodes.json",
+      "target": "omniroute/provider-nodes.example.json",
+      "kind": "json"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hermes-local.patch",
+      "target": "hermes/patches/installed-source.patch",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\lane-pin.patch",
+      "target": "provenance/pending-lane-pin.patch",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hindsight-pg0.patch",
+      "target": "hindsight/patches/native-pg0-data-dir.patch",
+      "kind": "copy"
+    },
+    {
+      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\upstreams.json",
+      "target": "provenance/upstreams.json",
+      "kind": "json"
+    }
+  ]
+}

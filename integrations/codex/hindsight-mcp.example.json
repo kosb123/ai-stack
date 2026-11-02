@@ -1,0 +1,13 @@
+{
+  "mcp_servers": {
+    "hindsight": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\jun\\.hindsight\\coding-agents\\dist\\mcp-server.js"
+      ],
+      "env": {
+        "HINDSIGHT_MCP_HARNESS": "codex"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "serverMode": "self-hosted",
+  "apiUrl": "http://localhost:8888",
+  "bankId": "jun",
+  "autoInject": "recall",
+  "injectTimeoutMs": 25000,
+  "recallOptions": {
+    "types": [
+      "observation",
+      "world",
+      "experience"
+    ]
+  },
+  "retainTags": [
+    "agent:{harness}"
+  ],
+  "pages": {
+    "Component map": false,
+    "Conventions and patterns": false,
+    "Core concepts": false,
+    "Key decisions and rationale": false,
+    "Initiatives and enhancements": false
+  }
+}

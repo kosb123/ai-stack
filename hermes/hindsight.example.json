@@ -1,0 +1,9 @@
+{
+  "mode": "local_external",
+  "api_url": "http://localhost:8888",
+  "bank_id": "jun",
+  "recall_types": "observation,world,experience",
+  "retain_strategy": "hermes-chat",
+  "retain_tags": "agent:hermes",
+  "retain_assistant_prefix": "Assistant (Hermes Agent, unverified)"
+}

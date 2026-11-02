@@ -1,0 +1,6 @@
+ts	phase	decision	why	evidence	result
+2026-11-02T01:26:30.286089+00:00	start	unified management repository selected	one entry point with existing runtime deployment paths	snapshot-manifest.json	187 sources identified
+2026-11-02T01:26:30.286089+00:00	inventory	preserved live tuner and dashboard plus pending branch patch	default branch alone omits local edits and unmerged work	docs/migration.md	recorded
+2026-11-02T01:26:30.286089+00:00	redaction	exported allowlisted files and excluded runtime data	credentials and memory are local-only	scripts/snapshot.py	known value scan passed
+2026-11-02T01:26:30.286089+00:00	review	fixed source/output overlap and relative-path replacement	both were reproduced by independent review	tests/test_snapshot.py	8 tests passed
+2026-11-02T01:26:30.286089+00:00	verify	ran offline suites	verify import without changing live services	docs/verification.md	140 tests passed

@@ -1,0 +1,1400 @@
+[
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\autotune.py",
+    "target": "omniroute/autotune/autotune.py",
+    "source_sha256": "71e10286534295308e80777bcd2c89b7ed56c773b34ed39aef64029c0b306837",
+    "snapshot_sha256": "71e10286534295308e80777bcd2c89b7ed56c773b34ed39aef64029c0b306837",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\bulk_discover.py",
+    "target": "omniroute/autotune/bulk_discover.py",
+    "source_sha256": "4d09773c2d34283f88b9847a3f23a85fdcb5afc0200b329242b0c011297cf740",
+    "snapshot_sha256": "b1fbaeb8d1a1e6a6624819b91c5631485ab459a35f38a1277a33b31a433bbe91",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\verify_cycle.py",
+    "target": "omniroute/autotune/verify_cycle.py",
+    "source_sha256": "5a143e10eb97f354b6e67c99fd623d98e1fd388226f76dba5c3068f434e0cec1",
+    "snapshot_sha256": "5a143e10eb97f354b6e67c99fd623d98e1fd388226f76dba5c3068f434e0cec1",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\test_preferred.py",
+    "target": "omniroute/autotune/test_preferred.py",
+    "source_sha256": "d12acffbb33a103ab8b8b33ba05e6b2292a8aaa64aa409361f7cc994ca120ef5",
+    "snapshot_sha256": "d12acffbb33a103ab8b8b33ba05e6b2292a8aaa64aa409361f7cc994ca120ef5",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\measure.py",
+    "target": "omniroute/autotune/measure.py",
+    "source_sha256": "ff16e7666a5a27988e37fb65bdcf0dcb987cefea1504de0b67d4995bc4b6cba4",
+    "snapshot_sha256": "308d3fb5176eefecd2403a30f6f69b268483c70fcc885c73b508c4c92272923b",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\sweep.py",
+    "target": "omniroute/autotune/sweep.py",
+    "source_sha256": "1ed42caeb5f5e3ccdec487af54ac2b670faf0c46d04399503767bce04d993b49",
+    "snapshot_sha256": "1ed42caeb5f5e3ccdec487af54ac2b670faf0c46d04399503767bce04d993b49",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\selected_models.json",
+    "target": "omniroute/autotune/selected_models.json",
+    "source_sha256": "fdedff496a29d623ae076ae35bcc8dde4d5bfbe25c9ac20f87e3490c00f6c8b6",
+    "snapshot_sha256": "36b19bc28e2153c73384b2ba8cd3ea819d1e1d620b33b34e50f02deace7c6c03",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\README.md",
+    "target": "omniroute/autotune/README.md",
+    "source_sha256": "c27d2853383274d39314ba3e52a21b812e4dba19e0468b89f00ffa9fbb0e58bf",
+    "snapshot_sha256": "a08d07887e8bf5a6b3db8178d3f8b5cf7b932d756b9186ea7eb0c1ec6ceac331",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\hs_probe.py",
+    "target": "omniroute/autotune/survey/hs_probe.py",
+    "source_sha256": "d31650a437e872485bbd90d40dac7165ea42b9d08975640ebfbac9a3ba7ac8fe",
+    "snapshot_sha256": "d31650a437e872485bbd90d40dac7165ea42b9d08975640ebfbac9a3ba7ac8fe",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\survey.py",
+    "target": "omniroute/autotune/survey/survey.py",
+    "source_sha256": "9a0aa9a800fbd24f37ff62e3c2f41d6d7bf0772d0567770483c6770dcfc96a03",
+    "snapshot_sha256": "2e85091bab0f8c9a6c6c50b05c76f44695318f575e563e4e224a9d00e9f26c34",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\api.py",
+    "target": "omniroute/dashboard/api.py",
+    "source_sha256": "6891777274ad815f5e3f0f205e117424ebe38506918b17a77b791cc71b9ffd17",
+    "snapshot_sha256": "f9fff6192e0b0329e1aba77b17e16460d625035a55c8a0ca5b435b60999cb55a",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\app.js",
+    "target": "omniroute/dashboard/app.js",
+    "source_sha256": "099494a2abc9f450beb0b31679a88372060a7601b81e78fe6618d150b166c3dd",
+    "snapshot_sha256": "6c0427f44181a7624a463b5579f3b706e59e06bba1ff7b6fc448c7039bc4d09f",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\catalog.py",
+    "target": "omniroute/dashboard/catalog.py",
+    "source_sha256": "57b865395c51931e5602ac98f88dcfa49f4f3fd9557cd2e65ec5d9bf73ed6b91",
+    "snapshot_sha256": "57b865395c51931e5602ac98f88dcfa49f4f3fd9557cd2e65ec5d9bf73ed6b91",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\collect.py",
+    "target": "omniroute/dashboard/collect.py",
+    "source_sha256": "fe672f3f11fcaad5148f54f15242b0c95f724c9bd9e7d104824570365dbcf89c",
+    "snapshot_sha256": "a327ff56b33f77400f630c28b84c4b704f7fd4a9dd4a8b45a5195ab8e7d38e44",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\index.html",
+    "target": "omniroute/dashboard/index.html",
+    "source_sha256": "98d8af3128e9ce71cc0f0ec6d25ae895e45bcc01c8070584e7a6680dd5251e51",
+    "snapshot_sha256": "98d8af3128e9ce71cc0f0ec6d25ae895e45bcc01c8070584e7a6680dd5251e51",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\README.md",
+    "target": "omniroute/dashboard/README.md",
+    "source_sha256": "6706959807a78527f68af1da575247ebd46ba1df627fdd8d5ff9f2227c1382c7",
+    "snapshot_sha256": "8556d52bc5c87e89df8dae6330ba4afd5e2495481e2034bdedc53873d600911d",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\server.py",
+    "target": "omniroute/dashboard/server.py",
+    "source_sha256": "47a4ed3f19140d2ba2bf0fe70ad9cc1daff7aad1159e8f432b05e64b08b372ab",
+    "snapshot_sha256": "47a4ed3f19140d2ba2bf0fe70ad9cc1daff7aad1159e8f432b05e64b08b372ab",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\style.css",
+    "target": "omniroute/dashboard/style.css",
+    "source_sha256": "b78206eb6ea0a445184d60b7a968d0763f4ccb6df835d85c08fa79121be1e217",
+    "snapshot_sha256": "4dd27de82c1ae61fb8454c297fe02674927841523ac88b07af8688de9687ae76",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\test_dashboard.py",
+    "target": "omniroute/dashboard/test_dashboard.py",
+    "source_sha256": "3f63260cd49daa4f5f44605042da7ed88a88634e4d16323b014509adb41904a6",
+    "snapshot_sha256": "599fcae1805d00d8051bba5d9b93c8c9a26527675bbaa877f3e512d28de8722b",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\config.yaml",
+    "target": "hermes/config.example.yaml",
+    "source_sha256": "145e4fce441dba97edfcec73e61f83eaed58498ef309f75f5ac552479f19366c",
+    "snapshot_sha256": "4dc31e34db852973abcbc91756deca21a7ec9026033997197c05a76fbdce1672",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\.env",
+    "target": "hermes/.env.example",
+    "source_sha256": "223caf8c436ff668f34d441c24fc65bb2debc28a91a578168dbd3fa70fdc62cb",
+    "snapshot_sha256": "5f93876a2228813bcbdbb2bf3da78a37dee620b244c70e79fa28b4ac7e322c61",
+    "redacted": true,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\autotest\\config.yaml",
+    "target": "hermes/profiles/autotest/config.example.yaml",
+    "source_sha256": "0af5d6e035194e2e20fce2d33808f1c8f8885671db6152e8d97dbefbc429b6e5",
+    "snapshot_sha256": "7f37b93adb7973c374d9706b16d90ffd6c3ee601316b6fc96c411ba486239404",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\blog\\config.yaml",
+    "target": "hermes/profiles/blog/config.example.yaml",
+    "source_sha256": "8680347e1457d7abd8726a3bcceb1c0cfab6a34325e2a6429ddfd3f5bd0e71ce",
+    "snapshot_sha256": "fc1f048e77d8696b112b476f818533b3c4fa418614508fad02589d89ff6cf539",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\profiles\\campaign\\config.yaml",
+    "target": "hermes/profiles/campaign/config.example.yaml",
+    "source_sha256": "c22177d1ecc38bc5e33d20240a9544afc753fd0b624cccd6047b4d4835c4ac5f",
+    "snapshot_sha256": "21500ef575a708b21a5c58be8c445b2e06b6719923759ccdbb246c5b4b4880e0",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\hindsight\\config.json",
+    "target": "hermes/hindsight.example.json",
+    "source_sha256": "019e657703d7fa42712a4c0acc92daa854934cac3cab554f7f3182f2986ef463",
+    "snapshot_sha256": "019e657703d7fa42712a4c0acc92daa854934cac3cab554f7f3182f2986ef463",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\scripts\\omni_monitor.py",
+    "target": "hermes/ops/omni_monitor.py",
+    "source_sha256": "fa8c63c14e21a98252729a4495846da906f6d0983a887bde8bc5eaf50b38e662",
+    "snapshot_sha256": "fa8c63c14e21a98252729a4495846da906f6d0983a887bde8bc5eaf50b38e662",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\scripts\\omni_report.py",
+    "target": "hermes/ops/omni_report.py",
+    "source_sha256": "6221ac8fca17ea112a02d7f6fae878221e5e14f6cde776435609c50ab954aaeb",
+    "snapshot_sha256": "6221ac8fca17ea112a02d7f6fae878221e5e14f6cde776435609c50ab954aaeb",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Start-External-LlamaCpp.ps1",
+    "target": "hermes/llamacpp/Start-External-LlamaCpp.ps1",
+    "source_sha256": "0061ab5603bee620c09c7881b4e1cdaa86ea936ca6f81c369490cd2cf45ad110",
+    "snapshot_sha256": "0061ab5603bee620c09c7881b4e1cdaa86ea936ca6f81c369490cd2cf45ad110",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Watch-LocalLlama.ps1",
+    "target": "hermes/llamacpp/Watch-LocalLlama.ps1",
+    "source_sha256": "9b1833823ac843f51bc562bb309dd74ee6c8d8768e30e5fbb6ff30ecfe039f47",
+    "snapshot_sha256": "9b1833823ac843f51bc562bb309dd74ee6c8d8768e30e5fbb6ff30ecfe039f47",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\Launch-LocalLLM.ps1",
+    "target": "hermes/llamacpp/Launch-LocalLLM.ps1",
+    "source_sha256": "61d56c386dc39fb0fab9259e27a896b8ba6911d85e25d0edcf70746500a27a99",
+    "snapshot_sha256": "1d28612a51c708a717fb8e9b36ae6d9b4147fe4e202834783f2b545d78b32fa9",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\presets.ini",
+    "target": "hermes/llamacpp/presets.ini",
+    "source_sha256": "420453a0f8525f1515d672b67a789038b307d4e9053777d6dee99e797c0b2409",
+    "snapshot_sha256": "c2e0bfdded638b30cc27b91701a38aa6b9805a51b3020636324b3c3681602602",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\runtimes\\llamacpp\\server.json",
+    "target": "hermes/llamacpp/server.json",
+    "source_sha256": "415e0a4f91ec0ce0462f13f693f9f45020cc489298398aadf6f7c49a4c4be8b9",
+    "snapshot_sha256": "a9a77627c8365c399991d6a957a5f0b9acfd83825caa99697f98876f928e8d8a",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\__init__.py",
+    "target": "hermes/plugins/pstack/__init__.py",
+    "source_sha256": "34ea93169c7064770685689e153ff16ad86357b2aaa6c33d88a0e293189f81e2",
+    "snapshot_sha256": "34ea93169c7064770685689e153ff16ad86357b2aaa6c33d88a0e293189f81e2",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\AGENTS.md",
+    "target": "hermes/plugins/pstack/AGENTS.md",
+    "source_sha256": "86d109c896484afb398dec03162ff299ebe7761a3cbb51a693454b40ea29fb32",
+    "snapshot_sha256": "86d109c896484afb398dec03162ff299ebe7761a3cbb51a693454b40ea29fb32",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\CLAUDE.md",
+    "target": "hermes/plugins/pstack/CLAUDE.md",
+    "source_sha256": "86d109c896484afb398dec03162ff299ebe7761a3cbb51a693454b40ea29fb32",
+    "snapshot_sha256": "86d109c896484afb398dec03162ff299ebe7761a3cbb51a693454b40ea29fb32",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\01-setup.md",
+    "target": "hermes/plugins/pstack/docs/guide/01-setup.md",
+    "source_sha256": "c916c5cbb92017aae876656751300b458711f3eccd993ad16b28b2c8dc545065",
+    "snapshot_sha256": "c916c5cbb92017aae876656751300b458711f3eccd993ad16b28b2c8dc545065",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\02-poteto-mode.md",
+    "target": "hermes/plugins/pstack/docs/guide/02-poteto-mode.md",
+    "source_sha256": "ecf7cdbf443dc7d0c00d3355260f1a26796f9bf2f4612bad16b0ecf051f23cf6",
+    "snapshot_sha256": "ecf7cdbf443dc7d0c00d3355260f1a26796f9bf2f4612bad16b0ecf051f23cf6",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\03-understand.md",
+    "target": "hermes/plugins/pstack/docs/guide/03-understand.md",
+    "source_sha256": "e4b656307d5db5bfac7fc9c6d588e3df7dc7c7427c707fd7664b121f76e4cac4",
+    "snapshot_sha256": "e4b656307d5db5bfac7fc9c6d588e3df7dc7c7427c707fd7664b121f76e4cac4",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\04-design.md",
+    "target": "hermes/plugins/pstack/docs/guide/04-design.md",
+    "source_sha256": "05d73b9d28ea70601b873aedf0948a0d364f67667124cc40cccf0fce6c2ec578",
+    "snapshot_sha256": "05d73b9d28ea70601b873aedf0948a0d364f67667124cc40cccf0fce6c2ec578",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\05-build-and-clean.md",
+    "target": "hermes/plugins/pstack/docs/guide/05-build-and-clean.md",
+    "source_sha256": "7d4726b26b0dec457ca36f67cb05fca7ab78bb66f7f2114e7b41ec8e31d99c2f",
+    "snapshot_sha256": "7d4726b26b0dec457ca36f67cb05fca7ab78bb66f7f2114e7b41ec8e31d99c2f",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\06-verify-and-ship.md",
+    "target": "hermes/plugins/pstack/docs/guide/06-verify-and-ship.md",
+    "source_sha256": "e81bc1019a9a66d94dd1c07e7387dd94e31a5cfd34d37fd0a747c7a552449d20",
+    "snapshot_sha256": "e81bc1019a9a66d94dd1c07e7387dd94e31a5cfd34d37fd0a747c7a552449d20",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\07-overnight.md",
+    "target": "hermes/plugins/pstack/docs/guide/07-overnight.md",
+    "source_sha256": "8d65b461460ac1ab7d3b259213b452b427c87cb26d6c263e35e11fd3b398e56c",
+    "snapshot_sha256": "8d65b461460ac1ab7d3b259213b452b427c87cb26d6c263e35e11fd3b398e56c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\08-principles.md",
+    "target": "hermes/plugins/pstack/docs/guide/08-principles.md",
+    "source_sha256": "a3c816c10140a822edc159b69550e4b7766f5a3c3bcd125191ec504ddb654f44",
+    "snapshot_sha256": "a3c816c10140a822edc159b69550e4b7766f5a3c3bcd125191ec504ddb654f44",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\09-make-it-yours.md",
+    "target": "hermes/plugins/pstack/docs/guide/09-make-it-yours.md",
+    "source_sha256": "c60168fe7dcb60490024ead6171526af8ba49374a6af1c5c0747d04bfec0c28b",
+    "snapshot_sha256": "c60168fe7dcb60490024ead6171526af8ba49374a6af1c5c0747d04bfec0c28b",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\10-recipes-and-pitfalls.md",
+    "target": "hermes/plugins/pstack/docs/guide/10-recipes-and-pitfalls.md",
+    "source_sha256": "a90b89d6b9851ff104f3164d7472dd56e88d3f6ee250bd064f438261fc06de1d",
+    "snapshot_sha256": "a90b89d6b9851ff104f3164d7472dd56e88d3f6ee250bd064f438261fc06de1d",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\docs\\guide\\README.md",
+    "target": "hermes/plugins/pstack/docs/guide/README.md",
+    "source_sha256": "15a2006f55d9cdc213fb8fde17e065377a10fd01a936ce0de315795f2e2632c5",
+    "snapshot_sha256": "15a2006f55d9cdc213fb8fde17e065377a10fd01a936ce0de315795f2e2632c5",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\LICENSE",
+    "target": "hermes/plugins/pstack/LICENSE",
+    "source_sha256": "81d7b9cc66e792b093f65647a061a4b020b9bb12bab34fa170d4791217d4dd6b",
+    "snapshot_sha256": "81d7b9cc66e792b093f65647a061a4b020b9bb12bab34fa170d4791217d4dd6b",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\plugin.yaml",
+    "target": "hermes/plugins/pstack/plugin.yaml",
+    "source_sha256": "4952d04d8f7f5de022bf3b27f48891264dd4330fa2851788266604cee68cce78",
+    "snapshot_sha256": "4952d04d8f7f5de022bf3b27f48891264dd4330fa2851788266604cee68cce78",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\README.md",
+    "target": "hermes/plugins/pstack/README.md",
+    "source_sha256": "08a645e77bfb61aff843e3b3b881e1bb9dc3207ad1ac8dfe92c1a0322255ebad",
+    "snapshot_sha256": "08a645e77bfb61aff843e3b3b881e1bb9dc3207ad1ac8dfe92c1a0322255ebad",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\scripts\\check_refs.py",
+    "target": "hermes/plugins/pstack/scripts/check_refs.py",
+    "source_sha256": "4b41202cbed6898c4cb1f3155af68ba50a1bc5d880566e81add86c609b714239",
+    "snapshot_sha256": "4b41202cbed6898c4cb1f3155af68ba50a1bc5d880566e81add86c609b714239",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\scripts\\check_version.py",
+    "target": "hermes/plugins/pstack/scripts/check_version.py",
+    "source_sha256": "47be220af46317eeb6485bddda173ffbedcad560299e76ba91c77a19e5449de9",
+    "snapshot_sha256": "47be220af46317eeb6485bddda173ffbedcad560299e76ba91c77a19e5449de9",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\architect\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/architect/SKILL.md",
+    "source_sha256": "04478d717a93a8770feabbc77846711b613cf46ae2f072eb85919fec3c3e5b10",
+    "snapshot_sha256": "04478d717a93a8770feabbc77846711b613cf46ae2f072eb85919fec3c3e5b10",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\arena\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/arena/SKILL.md",
+    "source_sha256": "33483cadef86c9ef1249305cbf55824c37046120e9ff2054354c4fb9bd807e34",
+    "snapshot_sha256": "33483cadef86c9ef1249305cbf55824c37046120e9ff2054354c4fb9bd807e34",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\automate-me\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/automate-me/SKILL.md",
+    "source_sha256": "acaa855a18f3e442f02232f4a96d85f332f0f20a23b0204be73ec19c227c5cf0",
+    "snapshot_sha256": "5dedce7829cfb3c25e5c290d439fb344707083280180c85eb0d6d526fb4ccecd",
+    "redacted": false,
+    "adjustments": [
+      "remove Markdown trailing whitespace"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\benchmark-checklist\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/benchmark-checklist/SKILL.md",
+    "source_sha256": "4439c3654fdb8e521ff66ee25b868027ab48b04b9332711fbf44706d95d0a3e5",
+    "snapshot_sha256": "4439c3654fdb8e521ff66ee25b868027ab48b04b9332711fbf44706d95d0a3e5",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\blast-radius\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/blast-radius/SKILL.md",
+    "source_sha256": "06393f956ce695be4192ae4a48bc65116bd858540b759bc4ee390c2d85f50802",
+    "snapshot_sha256": "06393f956ce695be4192ae4a48bc65116bd858540b759bc4ee390c2d85f50802",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\bro\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/bro/SKILL.md",
+    "source_sha256": "bbbe34221ec63e9a091277db010f6516ac85a2540f26cf64990d14c7fc965454",
+    "snapshot_sha256": "bbbe34221ec63e9a091277db010f6516ac85a2540f26cf64990d14c7fc965454",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-formal-verification-skill\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/create-formal-verification-skill/SKILL.md",
+    "source_sha256": "cd4ba96b6e7d36445e7bbfc1d8d97aaa32ee4d9557ac4e81158ec694a32e2c52",
+    "snapshot_sha256": "cd4ba96b6e7d36445e7bbfc1d8d97aaa32ee4d9557ac4e81158ec694a32e2c52",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\create-note.md",
+    "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+    "source_sha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+    "snapshot_sha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\README.md",
+    "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+    "source_sha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+    "snapshot_sha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\references\\feature-map-example\\search.md",
+    "target": "hermes/plugins/pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+    "source_sha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+    "snapshot_sha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\create-verification-skill\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/create-verification-skill/SKILL.md",
+    "source_sha256": "26f162cf307b7bd9c796306d97e078d41e434a11ffea5f0bafbd2836db6bd2e3",
+    "snapshot_sha256": "26f162cf307b7bd9c796306d97e078d41e434a11ffea5f0bafbd2836db6bd2e3",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\deslop\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/deslop/SKILL.md",
+    "source_sha256": "ff8f391bee13fa5d3b9086b8532b3161649d18d336749c93b178829795c9bc99",
+    "snapshot_sha256": "ff8f391bee13fa5d3b9086b8532b3161649d18d336749c93b178829795c9bc99",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\figure-it-out\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/figure-it-out/SKILL.md",
+    "source_sha256": "d56a4136162e96f2208f2cc12f617c796199c71d94aab6c89e463066231ac78d",
+    "snapshot_sha256": "d56a4136162e96f2208f2cc12f617c796199c71d94aab6c89e463066231ac78d",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\hermesbot\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/hermesbot/SKILL.md",
+    "source_sha256": "3b5dd798a2514dde6cc928ef8a5a4dde7e268b4f53e242bcb0a4d53b5dd6d644",
+    "snapshot_sha256": "3b5dd798a2514dde6cc928ef8a5a4dde7e268b4f53e242bcb0a4d53b5dd6d644",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\how\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/how/SKILL.md",
+    "source_sha256": "cbb557e0baa3a11bd6804cc98d89a793281ff779e51fc30ad0a2ba53447eeec1",
+    "snapshot_sha256": "cbb557e0baa3a11bd6804cc98d89a793281ff779e51fc30ad0a2ba53447eeec1",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\in-your-own-words\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/in-your-own-words/SKILL.md",
+    "source_sha256": "888b5ba8ab6c332dfe077795496b44a6879f1c5e6ede8a6011369b4df02033d7",
+    "snapshot_sha256": "888b5ba8ab6c332dfe077795496b44a6879f1c5e6ede8a6011369b4df02033d7",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\interrogate\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/interrogate/SKILL.md",
+    "source_sha256": "cac31fee07f61b0195d02f208cb2e503be6ef4319a298bfbe43e4cbfff13eb82",
+    "snapshot_sha256": "cac31fee07f61b0195d02f208cb2e503be6ef4319a298bfbe43e4cbfff13eb82",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\maintain-formal-verification-skill\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/maintain-formal-verification-skill/SKILL.md",
+    "source_sha256": "fe6d44e85c8b8407dd1e2aa21d49dbd3098238504ce3787c63d1a85212f892e9",
+    "snapshot_sha256": "fe6d44e85c8b8407dd1e2aa21d49dbd3098238504ce3787c63d1a85212f892e9",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\maintain-verification-skill\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/maintain-verification-skill/SKILL.md",
+    "source_sha256": "2ae0d9014b8f07ee81bd0a1e8665c9730d89a6d27c2f23f43bf000a8d0d20480",
+    "snapshot_sha256": "2ae0d9014b8f07ee81bd0a1e8665c9730d89a6d27c2f23f43bf000a8d0d20480",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\no-comments\\references\\comment-sicko.md",
+    "target": "hermes/plugins/pstack/skills/no-comments/references/comment-sicko.md",
+    "source_sha256": "c0fd0383008da45fc78cfac17b9007d62c42f87ad1c8d5c2fb658b1fd01f7c82",
+    "snapshot_sha256": "c0fd0383008da45fc78cfac17b9007d62c42f87ad1c8d5c2fb658b1fd01f7c82",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\no-comments\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/no-comments/SKILL.md",
+    "source_sha256": "0c824180216f0ebbb7bd2b6f5e0858fcebab3ffb267f7a1cb4fe9edcb0345fd0",
+    "snapshot_sha256": "0c824180216f0ebbb7bd2b6f5e0858fcebab3ffb267f7a1cb4fe9edcb0345fd0",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\authoring-a-skill.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/authoring-a-skill.md",
+    "source_sha256": "90e37792489c6cad95468aa8dc58454d411a3710e6b3ecfbcd125560776d37f2",
+    "snapshot_sha256": "90e37792489c6cad95468aa8dc58454d411a3710e6b3ecfbcd125560776d37f2",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autonomous-run.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autonomous-run.md",
+    "source_sha256": "b13f1af63e1078f0bd8914e19315e2c00df184f1ce0b50d52feb835bbf278ba9",
+    "snapshot_sha256": "b13f1af63e1078f0bd8914e19315e2c00df184f1ce0b50d52feb835bbf278ba9",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autopilot-full.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autopilot-full.md",
+    "source_sha256": "e21145d2b543a60e8c82f6928522b17e4ee8c36f7509d1600794c69aa223ef0c",
+    "snapshot_sha256": "e21145d2b543a60e8c82f6928522b17e4ee8c36f7509d1600794c69aa223ef0c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\autopilot-stack.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+    "source_sha256": "54cc74e7aa6e999489e036b9a15c044f57b629623701ac5b651a4b8c71d51bf3",
+    "snapshot_sha256": "54cc74e7aa6e999489e036b9a15c044f57b629623701ac5b651a4b8c71d51bf3",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\babysit.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/babysit.md",
+    "source_sha256": "72cb7b9d9c41d20e769035b1a2a146fb5adf59d466e1d519755f6eb58a8d4bd2",
+    "snapshot_sha256": "72cb7b9d9c41d20e769035b1a2a146fb5adf59d466e1d519755f6eb58a8d4bd2",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\bug-fix.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/bug-fix.md",
+    "source_sha256": "a7110f139b9b814a11161a8b6955a939f53e44f0284c5a2ffb50561a1a1f3526",
+    "snapshot_sha256": "a7110f139b9b814a11161a8b6955a939f53e44f0284c5a2ffb50561a1a1f3526",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\eval.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/eval.md",
+    "source_sha256": "95260e0adb822396e7e03241c86bb6ad255648c9a079f41a175357ee41239d02",
+    "snapshot_sha256": "95260e0adb822396e7e03241c86bb6ad255648c9a079f41a175357ee41239d02",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\feature.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/feature.md",
+    "source_sha256": "7b23aadaf380b496d32ae25811a40a83e47694787c6d3f607fda8dce4727b845",
+    "snapshot_sha256": "7b23aadaf380b496d32ae25811a40a83e47694787c6d3f607fda8dce4727b845",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\figure-it-out.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/figure-it-out.md",
+    "source_sha256": "0f7a0e06fa5e52c32ee7e1a276bda7bb99b73a771fc98c83492c728ec4291607",
+    "snapshot_sha256": "0f7a0e06fa5e52c32ee7e1a276bda7bb99b73a771fc98c83492c728ec4291607",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\hillclimb.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/hillclimb.md",
+    "source_sha256": "244f289898fe67a458065e90fe8217c916c5acf61cdee8975ade3f9831a12e91",
+    "snapshot_sha256": "244f289898fe67a458065e90fe8217c916c5acf61cdee8975ade3f9831a12e91",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\investigation.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/investigation.md",
+    "source_sha256": "be044f78e766a28e054054f259737eb7ff0717f395ddbb4eb34e962dce1a47c8",
+    "snapshot_sha256": "be044f78e766a28e054054f259737eb7ff0717f395ddbb4eb34e962dce1a47c8",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\multi-phase-plan.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+    "source_sha256": "e2e11d47551964b4fca7f83757ab2aae7608d739fec52f79786132b4fd0c0c42",
+    "snapshot_sha256": "e2e11d47551964b4fca7f83757ab2aae7608d739fec52f79786132b4fd0c0c42",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\opening-a-pr.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+    "source_sha256": "fda94fb22f9b95f5d412d31461c8e9f47c78c81cde7cfc2aac63c330c0ae3a28",
+    "snapshot_sha256": "fda94fb22f9b95f5d412d31461c8e9f47c78c81cde7cfc2aac63c330c0ae3a28",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\orchestrate.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/orchestrate.md",
+    "source_sha256": "a2c2e71057789b891388c05fd958edee5fca59d616d90c3540d9cc1fc8ddfd74",
+    "snapshot_sha256": "a2c2e71057789b891388c05fd958edee5fca59d616d90c3540d9cc1fc8ddfd74",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\pause-safely.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/pause-safely.md",
+    "source_sha256": "c63e7737e13311e7d79958688196bf76a0fda5610c8a065514aeb1c4176e0717",
+    "snapshot_sha256": "c63e7737e13311e7d79958688196bf76a0fda5610c8a065514aeb1c4176e0717",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\perf-issue.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/perf-issue.md",
+    "source_sha256": "29b7a620d2626a639982c6b6279daed6b0a59523678d42cda3a7c8fdcde21248",
+    "snapshot_sha256": "6f9df2e476d5ae4f00df4b0bd05e1f5b593b4f41a617090febdb781e6dfa30c6",
+    "redacted": false,
+    "adjustments": [
+      "remove Markdown trailing whitespace"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\prototype.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/prototype.md",
+    "source_sha256": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+    "snapshot_sha256": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\refactoring.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/refactoring.md",
+    "source_sha256": "c548ef80faf36c80a95de000b31aff61b79122cbc5f726f36b902e2184bdb1df",
+    "snapshot_sha256": "c548ef80faf36c80a95de000b31aff61b79122cbc5f726f36b902e2184bdb1df",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\runtime-forensics.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/runtime-forensics.md",
+    "source_sha256": "594f02c40c243a346e1f57b688ecf2ed5e882f21b3d24ed2204d1ac6f1c24a8a",
+    "snapshot_sha256": "594f02c40c243a346e1f57b688ecf2ed5e882f21b3d24ed2204d1ac6f1c24a8a",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\session-pickup.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/session-pickup.md",
+    "source_sha256": "e6b2a073142b3ac49bcf9a930cc1316063cf9ce6e129c48fa916003dd31c7b6d",
+    "snapshot_sha256": "e6b2a073142b3ac49bcf9a930cc1316063cf9ce6e129c48fa916003dd31c7b6d",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\shipping.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/shipping.md",
+    "source_sha256": "cb074420a49d9b2bd6aed079193e23c0035d55ccbbee6e54f5002ff445cd9a92",
+    "snapshot_sha256": "cb074420a49d9b2bd6aed079193e23c0035d55ccbbee6e54f5002ff445cd9a92",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\trace-forensics.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/trace-forensics.md",
+    "source_sha256": "137ce3984fb96e45971fdff4d3c79fa4ccc647c5b30ae4945783b9fb23f8cec7",
+    "snapshot_sha256": "137ce3984fb96e45971fdff4d3c79fa4ccc647c5b30ae4945783b9fb23f8cec7",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\visual-parity.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/visual-parity.md",
+    "source_sha256": "96919a18d7d6887936f88abedfa14d194214cd019e6f05e4e90c0f43f4e2e231",
+    "snapshot_sha256": "96919a18d7d6887936f88abedfa14d194214cd019e6f05e4e90c0f43f4e2e231",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\playbooks\\worktree-cleanup.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/playbooks/worktree-cleanup.md",
+    "source_sha256": "86aaed2cdec2a49fbefef9eeb3f9e382adb81dee1b3ee54f4c3deefc1884d80f",
+    "snapshot_sha256": "86aaed2cdec2a49fbefef9eeb3f9e382adb81dee1b3ee54f4c3deefc1884d80f",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\scripts\\worktree-audit.sh",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/scripts/worktree-audit.sh",
+    "source_sha256": "4b24023b7fb2ea6f808bdc5ce1ee4f7e9d5246845e7672431095438796dfa535",
+    "snapshot_sha256": "4b24023b7fb2ea6f808bdc5ce1ee4f7e9d5246845e7672431095438796dfa535",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\poteto-mode\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/poteto-mode/SKILL.md",
+    "source_sha256": "fa07bafa0792548482a9e78531d8a8b5313f9663b31dcf3b5c7ff7fbc440dd93",
+    "snapshot_sha256": "fa07bafa0792548482a9e78531d8a8b5313f9663b31dcf3b5c7ff7fbc440dd93",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-attack-the-premise\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-attack-the-premise/SKILL.md",
+    "source_sha256": "941549d8109acb80d84eccea22036ee9471aab5897ee6d86a5fdf6fae9265c18",
+    "snapshot_sha256": "941549d8109acb80d84eccea22036ee9471aab5897ee6d86a5fdf6fae9265c18",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-boundary-discipline\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-boundary-discipline/SKILL.md",
+    "source_sha256": "0fa3fa4e2b86ea96374745a786e36ca249ba7cca5bde6a98475919c17f95d33c",
+    "snapshot_sha256": "0fa3fa4e2b86ea96374745a786e36ca249ba7cca5bde6a98475919c17f95d33c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-build-the-lever\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-build-the-lever/SKILL.md",
+    "source_sha256": "8c2823330ff57ac3ffba9f8ae83dbfd38ab9359c7eab45678b9f48b027709486",
+    "snapshot_sha256": "8c2823330ff57ac3ffba9f8ae83dbfd38ab9359c7eab45678b9f48b027709486",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-encode-lessons-in-structure\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+    "source_sha256": "87f0867248a35a7c2110772e4bf5adb6bbdbbb04ae6312d7cb878c657b5f6658",
+    "snapshot_sha256": "87f0867248a35a7c2110772e4bf5adb6bbdbbb04ae6312d7cb878c657b5f6658",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-exhaust-the-design-space\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+    "source_sha256": "f5fe4464f2e8b574eece5e5dbc307f14149d0a9c45329f19b9ca11e76bac0383",
+    "snapshot_sha256": "f5fe4464f2e8b574eece5e5dbc307f14149d0a9c45329f19b9ca11e76bac0383",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-experience-first\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-experience-first/SKILL.md",
+    "source_sha256": "aa3b606a6909db68766c44fb9c25308014c54af7a3da45301d98d78116534ace",
+    "snapshot_sha256": "aa3b606a6909db68766c44fb9c25308014c54af7a3da45301d98d78116534ace",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-explain-the-number\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-explain-the-number/SKILL.md",
+    "source_sha256": "b6a0553d20b4fcd2d8e3caf548976faeca8bd9a1510ae870c17e337448ee6708",
+    "snapshot_sha256": "b6a0553d20b4fcd2d8e3caf548976faeca8bd9a1510ae870c17e337448ee6708",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-fix-root-causes\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-fix-root-causes/SKILL.md",
+    "source_sha256": "4dbfd01a3960fbc932a8cf282c648fce07f3eb8aa596e5ad521f358bb412624e",
+    "snapshot_sha256": "4dbfd01a3960fbc932a8cf282c648fce07f3eb8aa596e5ad521f358bb412624e",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-foundational-thinking\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-foundational-thinking/SKILL.md",
+    "source_sha256": "23b12fc617f9ef48dbb6e24495d0401c7932caf437a46e3b35eed4d52c3b162a",
+    "snapshot_sha256": "23b12fc617f9ef48dbb6e24495d0401c7932caf437a46e3b35eed4d52c3b162a",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-guard-the-context-window\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-guard-the-context-window/SKILL.md",
+    "source_sha256": "ba05850a6705ce45845056f9a98b55b9f09e9a67beb517bff58d85049ad09c84",
+    "snapshot_sha256": "ba05850a6705ce45845056f9a98b55b9f09e9a67beb517bff58d85049ad09c84",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-laziness-protocol\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-laziness-protocol/SKILL.md",
+    "source_sha256": "97454bd4a59970d018c3bfe59642682a38d6d51bcd31010157de65f773826f48",
+    "snapshot_sha256": "97454bd4a59970d018c3bfe59642682a38d6d51bcd31010157de65f773826f48",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-make-operations-idempotent\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-make-operations-idempotent/SKILL.md",
+    "source_sha256": "00e2c3144a3ef3b4ce462f666d46733ba41b5499818c4494e0d7c6cdaf584083",
+    "snapshot_sha256": "00e2c3144a3ef3b4ce462f666d46733ba41b5499818c4494e0d7c6cdaf584083",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-migrate-callers-then-delete-legacy-apis\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+    "source_sha256": "1286ea7b68780d71673fa97ed07299523838b38bf6d2d27328bbfd57e05f9357",
+    "snapshot_sha256": "1286ea7b68780d71673fa97ed07299523838b38bf6d2d27328bbfd57e05f9357",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-minimize-reader-load\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-minimize-reader-load/SKILL.md",
+    "source_sha256": "647740d5f1f4ab7301c3fb4f2f40f89d14fac764f65547de668c271f9e5c4e8a",
+    "snapshot_sha256": "647740d5f1f4ab7301c3fb4f2f40f89d14fac764f65547de668c271f9e5c4e8a",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-model-the-domain\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-model-the-domain/SKILL.md",
+    "source_sha256": "82d0030fd052c67c5775d4a78867b5aa43ea0c3b101ed1073d7f7e7317a5f53a",
+    "snapshot_sha256": "82d0030fd052c67c5775d4a78867b5aa43ea0c3b101ed1073d7f7e7317a5f53a",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-never-block-on-the-human\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-never-block-on-the-human/SKILL.md",
+    "source_sha256": "fef60d10b205f92a05ba9a3ba44369ec720e0d0d31e08ae5d30099e74532f902",
+    "snapshot_sha256": "fef60d10b205f92a05ba9a3ba44369ec720e0d0d31e08ae5d30099e74532f902",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-outcome-oriented-execution\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+    "source_sha256": "308f8c1e5177648f60aa2fe948a70e2a4b319409155681fda4813ab4d10c9b1f",
+    "snapshot_sha256": "308f8c1e5177648f60aa2fe948a70e2a4b319409155681fda4813ab4d10c9b1f",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-prove-it-works\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-prove-it-works/SKILL.md",
+    "source_sha256": "9932b55fad16aa69c43aa61b2c75b4f63df8a219cd66e79948d776105a6b7bd9",
+    "snapshot_sha256": "9932b55fad16aa69c43aa61b2c75b4f63df8a219cd66e79948d776105a6b7bd9",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-redesign-from-first-principles\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+    "source_sha256": "dc188052ff301b5906680383dbc03767924754f0ea8b96e4c2e9152b7d233d7d",
+    "snapshot_sha256": "dc188052ff301b5906680383dbc03767924754f0ea8b96e4c2e9152b7d233d7d",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-separate-before-serializing-shared-state\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+    "source_sha256": "dec08c9ef65eca9abb7f58f3dcf8c6f6ff84211b4bf7ccf4d1cf66868ceb3509",
+    "snapshot_sha256": "dec08c9ef65eca9abb7f58f3dcf8c6f6ff84211b4bf7ccf4d1cf66868ceb3509",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-sequence-verifiable-units\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+    "source_sha256": "aa9bf5e48214a3bb40d5398cbc423fd9b5968855c0c23213b46c3b70d79d5e90",
+    "snapshot_sha256": "aa9bf5e48214a3bb40d5398cbc423fd9b5968855c0c23213b46c3b70d79d5e90",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-subtract-before-you-add\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-subtract-before-you-add/SKILL.md",
+    "source_sha256": "43f57c6707cc43ceffb776392fd0b1ce0f27b280a2fdfc9eac6e4cee9e2be2dc",
+    "snapshot_sha256": "43f57c6707cc43ceffb776392fd0b1ce0f27b280a2fdfc9eac6e4cee9e2be2dc",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-test-behavior-not-implementation\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+    "source_sha256": "98c67ebfdcdd2ed269373588ebe86f57e25bcf0c911468ab54d28ff29c1f24c1",
+    "snapshot_sha256": "98c67ebfdcdd2ed269373588ebe86f57e25bcf0c911468ab54d28ff29c1f24c1",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\principle-type-system-discipline\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/principle-type-system-discipline/SKILL.md",
+    "source_sha256": "33665068743ea82e209af76f79eac2ba84813d4d32855382e7dd4f50bfb140ed",
+    "snapshot_sha256": "33665068743ea82e209af76f79eac2ba84813d4d32855382e7dd4f50bfb140ed",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\recall\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/recall/SKILL.md",
+    "source_sha256": "a56fac1a0e0249841c54625443a061031435c85957712d29cd854a74c6318f37",
+    "snapshot_sha256": "a56fac1a0e0249841c54625443a061031435c85957712d29cd854a74c6318f37",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\divergent-reviewer.md",
+    "target": "hermes/plugins/pstack/skills/reflect/references/divergent-reviewer.md",
+    "source_sha256": "765938922da5acd97b3fd4a22b8f936e531dfb0812abb98669fe6574651d1d4b",
+    "snapshot_sha256": "765938922da5acd97b3fd4a22b8f936e531dfb0812abb98669fe6574651d1d4b",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\judgment-reviewer.md",
+    "target": "hermes/plugins/pstack/skills/reflect/references/judgment-reviewer.md",
+    "source_sha256": "2857e9fe51d8494bdf13aaf482541e2f1dd6806a95e5cf8fd4cc2c80747d1c4c",
+    "snapshot_sha256": "2857e9fe51d8494bdf13aaf482541e2f1dd6806a95e5cf8fd4cc2c80747d1c4c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\synthesizer.md",
+    "target": "hermes/plugins/pstack/skills/reflect/references/synthesizer.md",
+    "source_sha256": "2f76c847eb45b182dc6fbcbf7d96c8ee7e2986ecfd9e0d640fec44e3cc5a617c",
+    "snapshot_sha256": "2f76c847eb45b182dc6fbcbf7d96c8ee7e2986ecfd9e0d640fec44e3cc5a617c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\references\\tooling-reviewer.md",
+    "target": "hermes/plugins/pstack/skills/reflect/references/tooling-reviewer.md",
+    "source_sha256": "f4240e2d8baae96bbaa166af6db3568472db608ce4a4a653cc462867d4e8edd3",
+    "snapshot_sha256": "f4240e2d8baae96bbaa166af6db3568472db608ce4a4a653cc462867d4e8edd3",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\reflect\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/reflect/SKILL.md",
+    "source_sha256": "230626e1f7e1e4563891a66f7f638354a0ecc4a2c1d0b3e1b7a8f4c899166d01",
+    "snapshot_sha256": "230626e1f7e1e4563891a66f7f638354a0ecc4a2c1d0b3e1b7a8f4c899166d01",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\setup-pstack\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/setup-pstack/SKILL.md",
+    "source_sha256": "74688e6f7c9bc40c4c9de9ef2c0fe7c659ea7ccd9ea17a7414aaddf341e7923b",
+    "snapshot_sha256": "74688e6f7c9bc40c4c9de9ef2c0fe7c659ea7ccd9ea17a7414aaddf341e7923b",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\sharpen\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/sharpen/SKILL.md",
+    "source_sha256": "a3570fc5983a423496b5534bab59bc88fc590c889e450fe055f898fb13a412de",
+    "snapshot_sha256": "a3570fc5983a423496b5534bab59bc88fc590c889e450fe055f898fb13a412de",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\references\\decision-log-template.tsv",
+    "target": "hermes/plugins/pstack/skills/show-me-your-work/references/decision-log-template.tsv",
+    "source_sha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+    "snapshot_sha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\scripts\\log.sh",
+    "target": "hermes/plugins/pstack/skills/show-me-your-work/scripts/log.sh",
+    "source_sha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
+    "snapshot_sha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\show-me-your-work\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/show-me-your-work/SKILL.md",
+    "source_sha256": "8a9e0d01f1b762671e88df851523f91912af30cd5840cd2168e2ae5d9f71e10c",
+    "snapshot_sha256": "8a9e0d01f1b762671e88df851523f91912af30cd5840cd2168e2ae5d9f71e10c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\swarm\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/swarm/SKILL.md",
+    "source_sha256": "cbf3c3a3d0c2b8cc04aacf830294de1095a2e2571c4f873e83531d4eb529d632",
+    "snapshot_sha256": "cbf3c3a3d0c2b8cc04aacf830294de1095a2e2571c4f873e83531d4eb529d632",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\tdd\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/tdd/SKILL.md",
+    "source_sha256": "242191460678d09ba2986a0b88cb88618da0cb68729abf1cb02c88709125c7e3",
+    "snapshot_sha256": "242191460678d09ba2986a0b88cb88618da0cb68729abf1cb02c88709125c7e3",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\teach\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/teach/SKILL.md",
+    "source_sha256": "ba341ce98fce26228b9fe8743baf5abd06959753c433ae0450248c4f42458348",
+    "snapshot_sha256": "ba341ce98fce26228b9fe8743baf5abd06959753c433ae0450248c4f42458348",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\technical-writing\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/technical-writing/SKILL.md",
+    "source_sha256": "7f8e54761c2b5691304d4913fa9bae2a017c12a41a115f0af7cb8cac45ef0896",
+    "snapshot_sha256": "7f8e54761c2b5691304d4913fa9bae2a017c12a41a115f0af7cb8cac45ef0896",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\typescript-best-practices\\references\\patterns.md",
+    "target": "hermes/plugins/pstack/skills/typescript-best-practices/references/patterns.md",
+    "source_sha256": "faa1362055374452efccac1b629677c61acfb0bcc6c4e3311836b5715638ee18",
+    "snapshot_sha256": "faa1362055374452efccac1b629677c61acfb0bcc6c4e3311836b5715638ee18",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\typescript-best-practices\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/typescript-best-practices/SKILL.md",
+    "source_sha256": "5ca857682d1c5e8ae390cc8a6c649f3259614849440e4f51b2ab5b88a0735c90",
+    "snapshot_sha256": "5ca857682d1c5e8ae390cc8a6c649f3259614849440e4f51b2ab5b88a0735c90",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\unslop\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/unslop/SKILL.md",
+    "source_sha256": "87df36a6a58ff9d352fbe6b152b65931feca435264914042416babac9b74a865",
+    "snapshot_sha256": "87df36a6a58ff9d352fbe6b152b65931feca435264914042416babac9b74a865",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\epistemics.md",
+    "target": "hermes/plugins/pstack/skills/why/references/epistemics.md",
+    "source_sha256": "fcc0f559c072832c869a5ada72434b4849320a637ae63c09e8ee14f7ad787059",
+    "snapshot_sha256": "fcc0f559c072832c869a5ada72434b4849320a637ae63c09e8ee14f7ad787059",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\investigator-prompt.md",
+    "target": "hermes/plugins/pstack/skills/why/references/investigator-prompt.md",
+    "source_sha256": "6892956a7ab0b5ee6c4babaf4f793703abe89b350ea7cb9463b4a56eea1c8266",
+    "snapshot_sha256": "6892956a7ab0b5ee6c4babaf4f793703abe89b350ea7cb9463b4a56eea1c8266",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\source-playbook.md",
+    "target": "hermes/plugins/pstack/skills/why/references/source-playbook.md",
+    "source_sha256": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+    "snapshot_sha256": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\code-archaeology.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/code-archaeology.md",
+    "source_sha256": "8c14aa382f0de40829b2668d43e3f54814480bb93a486c9282ada4003f6b9dbd",
+    "snapshot_sha256": "8c14aa382f0de40829b2668d43e3f54814480bb93a486c9282ada4003f6b9dbd",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\databricks.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/databricks.md",
+    "source_sha256": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+    "snapshot_sha256": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\datadog.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/datadog.md",
+    "source_sha256": "ebe9c07bac28e47757ee7f16fb93b0c01d427a08c501957d047f395a2f37b7e7",
+    "snapshot_sha256": "ebe9c07bac28e47757ee7f16fb93b0c01d427a08c501957d047f395a2f37b7e7",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\incident-postmortem.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/incident-postmortem.md",
+    "source_sha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+    "snapshot_sha256": "a899470f05f86029630a13a2696491cc708ca7b56a6e822a69ff6e954d6ff8cf",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\linear.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/linear.md",
+    "source_sha256": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+    "snapshot_sha256": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\notion.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/notion.md",
+    "source_sha256": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+    "snapshot_sha256": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\sentry.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/sentry.md",
+    "source_sha256": "6f292bc4fb1548e956f95e1900b9481abf5134254419f1cd9edec95428c82d73",
+    "snapshot_sha256": "6f292bc4fb1548e956f95e1900b9481abf5134254419f1cd9edec95428c82d73",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\sources\\slack.md",
+    "target": "hermes/plugins/pstack/skills/why/references/sources/slack.md",
+    "source_sha256": "58fee61d024b3700b407e7acbed367944720ff05adfddb6954d36c88368f3ba7",
+    "snapshot_sha256": "58fee61d024b3700b407e7acbed367944720ff05adfddb6954d36c88368f3ba7",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\references\\synthesizer-prompt.md",
+    "target": "hermes/plugins/pstack/skills/why/references/synthesizer-prompt.md",
+    "source_sha256": "356678af13232050c7c9ca03f3233825f6b7ac40b74aebe314462aa85976d344",
+    "snapshot_sha256": "356678af13232050c7c9ca03f3233825f6b7ac40b74aebe314462aa85976d344",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\AppData\\Local\\hermes\\plugins\\pstack\\skills\\why\\SKILL.md",
+    "target": "hermes/plugins/pstack/skills/why/SKILL.md",
+    "source_sha256": "ce75bc02884063cb8ed04d5931fd5324f5036e39c94406f5d76c3b51a6b07a02",
+    "snapshot_sha256": "ce75bc02884063cb8ed04d5931fd5324f5036e39c94406f5d76c3b51a6b07a02",
+    "redacted": false
+  },
+  {
+    "source": "E:\\hindsight\\run_api.py",
+    "target": "hindsight/ops/run_api.py",
+    "source_sha256": "6feb63e4629b8f7a4b34ae78b139583a62592f168220d36587d207fa92685a74",
+    "snapshot_sha256": "6feb63e4629b8f7a4b34ae78b139583a62592f168220d36587d207fa92685a74",
+    "redacted": false
+  },
+  {
+    "source": "E:\\hindsight\\start-hindsight.ps1",
+    "target": "hindsight/ops/start-hindsight.ps1",
+    "source_sha256": "667bd42d28e0cabd4c585ad3d65761ede717026cc42f640a786253b90539a495",
+    "snapshot_sha256": "667bd42d28e0cabd4c585ad3d65761ede717026cc42f640a786253b90539a495",
+    "redacted": false
+  },
+  {
+    "source": "E:\\hindsight\\hindsight.env",
+    "target": "hindsight/native.env.example",
+    "source_sha256": "d2b455afba09492e9c2d1272bf28bec8e75b576a852eb504b2afc11b51922528",
+    "snapshot_sha256": "2d7a6242959e831d4083f9e2fe9b0bfbfc9c0c39cafa4e1c0b9f68366e9a89ac",
+    "redacted": true,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\.hindsight\\hindsight.env",
+    "target": "hindsight/legacy-client.env.example",
+    "source_sha256": "45f0bb085354330950cf80618ef817be9f5c294022d22236fe28114b5330d2e4",
+    "snapshot_sha256": "59073be3ad3a1855edd6a139ef68ec67bea3f2e06350f79ce4ea94ae22e43e27",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\.hindsight\\coding-agent.json",
+    "target": "hindsight/coding-agent.example.json",
+    "source_sha256": "7a8e7b162b710e84208fee77d4ae02dfc9577baefd1535b7932b600a087668a4",
+    "snapshot_sha256": "dcb76dba3bf98fb65ad812b6efd4bd5e5b716a98d0d0a754f537b34b46c39ff2",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\.codex\\hooks.json",
+    "target": "integrations/codex/hooks.example.json",
+    "source_sha256": "ce132adc1686bea393f2cac394d16ed3fdb923f02e1f37c42ef2ea8f9da5a08e",
+    "snapshot_sha256": "ce132adc1686bea393f2cac394d16ed3fdb923f02e1f37c42ef2ea8f9da5a08e",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\codex-mcp.json",
+    "target": "integrations/codex/hindsight-mcp.example.json",
+    "source_sha256": "052209cc3b4abf9dd5404b2e95deef61b3e25360dc210e17edbba3fbd2f95d9b",
+    "snapshot_sha256": "10d32ea2caae0e629a6e459fbfbc2c2a6d5393a180f5496fcf25f7fe8d253670",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\.hindsight\\backup-hindsight.ps1",
+    "target": "hindsight/ops/backup-hindsight.ps1",
+    "source_sha256": "4012866f9657bfe7f560a1d972c3ae3f5bda7a0a25a0cf39e45335eabd31002c",
+    "snapshot_sha256": "bdd060887191380c7e835c33486c5b3599ebd685583c9473f90e9255609e791f",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\.hindsight\\unpause-pages.py",
+    "target": "hindsight/ops/unpause-pages.py",
+    "source_sha256": "1e1de433aa9ad92cf0c690b433e03f28fee7e0a6fefecf23bc10cfee94b0156e",
+    "snapshot_sha256": "1e1de433aa9ad92cf0c690b433e03f28fee7e0a6fefecf23bc10cfee94b0156e",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\combos.md",
+    "target": "skills/verify-hermes-stack/features/combos.md",
+    "source_sha256": "a028c7c39f8ef6740964f44adf795aaf159d1227d3f10727f6de6927bf1ca6d5",
+    "snapshot_sha256": "a028c7c39f8ef6740964f44adf795aaf159d1227d3f10727f6de6927bf1ca6d5",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\hermes-tool.md",
+    "target": "skills/verify-hermes-stack/features/hermes-tool.md",
+    "source_sha256": "252902e4dec09848d0048ffc76f297f9f7a26be65ff5582197641ba8f7339729",
+    "snapshot_sha256": "97ff12b7047bf86d49f85e9decd4d0b20a90bcc0f958ffcb034e0a03fc82c06a",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\local-tool.md",
+    "target": "skills/verify-hermes-stack/features/local-tool.md",
+    "source_sha256": "f9cb86e55e343c6d377d05d01b859b0815432275cb9c9c518b8dcf72f686ff78",
+    "snapshot_sha256": "f9cb86e55e343c6d377d05d01b859b0815432275cb9c9c518b8dcf72f686ff78",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\memory.md",
+    "target": "skills/verify-hermes-stack/features/memory.md",
+    "source_sha256": "8ec7cc60f9e05b793cf69e2741c14f4626c138164e9dc5075742f1f720557bda",
+    "snapshot_sha256": "8ec7cc60f9e05b793cf69e2741c14f4626c138164e9dc5075742f1f720557bda",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\README.md",
+    "target": "skills/verify-hermes-stack/features/README.md",
+    "source_sha256": "141b7d53462768c4ee4ccc2af70ee246eff0d2b2b83fdac87da380abb24e5636",
+    "snapshot_sha256": "141b7d53462768c4ee4ccc2af70ee246eff0d2b2b83fdac87da380abb24e5636",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\features\\session-routing.md",
+    "target": "skills/verify-hermes-stack/features/session-routing.md",
+    "source_sha256": "fa8a3812ac027a4ee80e3ef558f34063a888478ce430731a3fa8e4a8ad6b7f27",
+    "snapshot_sha256": "fa8a3812ac027a4ee80e3ef558f34063a888478ce430731a3fa8e4a8ad6b7f27",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\audit_settings.py",
+    "target": "skills/verify-hermes-stack/scripts/audit_settings.py",
+    "source_sha256": "2d2f97207afbde71daa75fa9237781fca8206d780e024191b613c64390b85110",
+    "snapshot_sha256": "1cdab92b101d0ff87696f02f599d55d9b2d5c5537a488ce3d62c14c2967b8e1b",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\test_verifier.py",
+    "target": "skills/verify-hermes-stack/scripts/test_verifier.py",
+    "source_sha256": "5221c59f506073030903ca40c15b7dfc644b2a1efd658c78eb5f3c773d26612f",
+    "snapshot_sha256": "46b2a057b14b10fa696f09a80cea6d27a2685f89c3c3df11dbeb1406d7691150",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\scripts\\verify_stack.py",
+    "target": "skills/verify-hermes-stack/scripts/verify_stack.py",
+    "source_sha256": "08b342f3f2159d39604c3af58e8613fa4c346e34f2870581a1877d3f02c883ba",
+    "snapshot_sha256": "75370d132625a70b709e9c389edfc8aa82f7ed90b6c16eb6c2a0b68c91cb602b",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-01\\poteto-mode\\.cursor\\skills\\verify-hermes-stack\\SKILL.md",
+    "target": "skills/verify-hermes-stack/SKILL.md",
+    "source_sha256": "f4b074dde086aa2a669593281ce4316722bc6067858d45495b023f8b2094e2f1",
+    "snapshot_sha256": "6ebbe88c403ae3fd25df53f4279ab4e27215427d7d2328b6b4156ab80d851c81",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\README.md",
+    "target": "integrations/claude-code/README.md",
+    "source_sha256": "8a96d54540bf1faf0977d37e2a191715a728dbfe875b0d5e41315d37fc244a63",
+    "snapshot_sha256": "d02b7445fc8f9fe2781f57114c123acbb179db2c64d4ac5515e6389a711bf239",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\autodev-loop.ps1",
+    "target": "integrations/claude-code/scripts/autodev-loop.ps1",
+    "source_sha256": "d0f21f0f092dc5803ca7955d7500f8d349e223779b1a0941f916c78eb4531633",
+    "snapshot_sha256": "2dc936729f8b644ca34fee568bb6dbfa2274f065cf6b9995cbef288246ba98dc",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\claude-best.ps1",
+    "target": "integrations/claude-code/scripts/claude-best.ps1",
+    "source_sha256": "7707d7d6d91e39845a3bd05069ee7c0cd88978ac4709d0ee272fadc2c6891243",
+    "snapshot_sha256": "fb142fb1f95d3d1e4c2aff8f65de3ca69a117d3a450cfb03f71cf15f1d89d827",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\claude-free.ps1",
+    "target": "integrations/claude-code/scripts/claude-free.ps1",
+    "source_sha256": "c057d28a8fadac7d94538c5fe57e0212be1fc4ff3ce0f2cff96ae7bb08bb1fba",
+    "snapshot_sha256": "e9aeedf5944ff6b21aa8c08830f663a24e9571e9fbfa553f6475939a6b0705c9",
+    "redacted": false,
+    "adjustments": [
+      "repository portability and safety adjustments (scripts/prepare_snapshot.py)",
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\legacy-claude-setup\\scripts\\install.ps1",
+    "target": "integrations/claude-code/scripts/install.ps1",
+    "source_sha256": "c48ce10b7dced6f8e32cf02e216db0702e2f17f6042358336987481212474f37",
+    "snapshot_sha256": "d5b5bda9dcdf7090f7ee57355f11ea0224c0c59a7c10b2c9bd3d2fdb1e650508",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\.omniroute\\.env",
+    "target": "omniroute/.env.example",
+    "source_sha256": "fe0789b32771542d752040d791a584da2fcc56bd0e1b8ac6b8df68eba2bd35d4",
+    "snapshot_sha256": "f1098d2bdae386e5f4f24f12520a94782ed117d25d1fae2d8ab99a48a0c9d375",
+    "redacted": true,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\.omniroute\\omniroute-server.vbs",
+    "target": "omniroute/ops/omniroute-server.vbs",
+    "source_sha256": "f0b1804c7a23448f4a87747dd88d4d1d3d80885bd6f070eda534ae619091bda0",
+    "snapshot_sha256": "18f4aa153c6360e1ae0ce9ac02d8d1abf4e67ff782ad06b502a406f7d0c5b23a",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\combos.json",
+    "target": "omniroute/combos.example.json",
+    "source_sha256": "9d96ed4c493ab227d9a66a3ed295e42a12fa304289f4d5e48ca7e911e27c54d1",
+    "snapshot_sha256": "f1461f409c62fb798729b253b96a5915681e739d487e8fcbc591092a3f67d93d",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\settings.json",
+    "target": "omniroute/settings.example.json",
+    "source_sha256": "be0d0e4af3bb88f5a0030b31e858d8bc7fd15c2caef7f02162787484c155ff9d",
+    "snapshot_sha256": "7a29128d530966ccc5df51482b9a384a3a7deadfcee66dea332c2557afa3a834",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\connections.json",
+    "target": "omniroute/connections.example.json",
+    "source_sha256": "3015ef82e080f60f148f9e46d1604e495bf66fece5f13bb49f17d70393d30cf5",
+    "snapshot_sha256": "0486f74ff23540d849fd3f658a372efb37c6593a58981c7dfac13119bb8790c7",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\nodes.json",
+    "target": "omniroute/provider-nodes.example.json",
+    "source_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "snapshot_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hermes-local.patch",
+    "target": "hermes/patches/installed-source.patch",
+    "source_sha256": "740b0f9cbd69b1c6238223cf36e7378a59a3b2ee0a0b32b213faa5a9ea2bfcbd",
+    "snapshot_sha256": "740b0f9cbd69b1c6238223cf36e7378a59a3b2ee0a0b32b213faa5a9ea2bfcbd",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\lane-pin.patch",
+    "target": "provenance/pending-lane-pin.patch",
+    "source_sha256": "efc7dfda73b111e512a003518e94a118f1f3ce8bd6a603db39d85597cb82d7f1",
+    "snapshot_sha256": "efc7dfda73b111e512a003518e94a118f1f3ce8bd6a603db39d85597cb82d7f1",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hindsight-pg0.patch",
+    "target": "hindsight/patches/native-pg0-data-dir.patch",
+    "source_sha256": "7d7029f98fcebd4faffcd64cd498a2e86260b5aea3322b052dfac73e2d00cd2b",
+    "snapshot_sha256": "429613772effdf6408e977744b0216038d92272329ddef154bc012ed1bdc938c",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\upstreams.json",
+    "target": "provenance/upstreams.json",
+    "source_sha256": "e8749a4f78bac45d8ce29d3c683b87205fe796f9b4eafd80da8ccf0e8cd61e78",
+    "snapshot_sha256": "174e87037aa59a83c85f494e9dc644e160ce7ecf06bfc7c2b34e7a0bed461cfc",
+    "redacted": true
+  }
+]

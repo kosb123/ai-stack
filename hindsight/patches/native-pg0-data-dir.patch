@@ -1,0 +1,38 @@
+--- a/hindsight_api/pg0.py
++++ b/hindsight_api/pg0.py
+@@ -2,6 +2,7 @@
+ 
+ import asyncio
+ import logging
++import os
+ from dataclasses import dataclass
+ from typing import TYPE_CHECKING, Any
+ from urllib.parse import parse_qsl
+@@ -27,6 +28,7 @@
+         database: str = DEFAULT_DATABASE,
+         name: str = "hindsight",
+         config: dict[str, str] | None = None,
++        data_dir: str | None = None,
+         **kwargs,
+     ):
+         self.port = port  # None means pg0 will auto-assign
+@@ -39,6 +41,10 @@
+         # the same pg0 instance — the postgres default of 100 max_connections is
+         # easy to exhaust under that fan-out.
+         self.config = config
++        # Data directory override: pg0 CLI defaults to ~/.pg0/instances/<name>/data.
++        # Allow relocating the data (e.g. to a second drive) via argument or the
++        # HINDSIGHT_API_PG0_DATA_DIR environment variable.
++        self.data_dir = data_dir or os.environ.get("HINDSIGHT_API_PG0_DATA_DIR")
+         self._pg0: Pg0 | None = None
+ 
+     def _get_pg0(self) -> Pg0:
+@@ -64,6 +70,8 @@
+                 kwargs["port"] = self.port
+             if self.config is not None:
+                 kwargs["config"] = self.config
++            if self.data_dir:
++                kwargs["data_dir"] = self.data_dir
+             self._pg0 = Pg0(**kwargs)
+         return self._pg0
+ 
