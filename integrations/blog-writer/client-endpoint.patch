@@ -1,0 +1,44 @@
+--- a/blog-rank/writer/simple_write.py
++++ b/blog-rank/writer/simple_write.py
+@@ -6,7 +6,9 @@
+ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+ import photo_sheet, kw_recommend as kr, export_post
+ 
+-LLM_URL = os.environ.get('BLOG_LLM_URL', 'http://127.0.0.1:18435/v1/chat/completions')
++import local_llm
++
++LLM_URL = os.environ.get('BLOG_LLM_URL', local_llm.DEFAULT_URL)
+ LLM_MODEL = os.environ.get('BLOG_LLM_MODEL', 'Qwen3.8-27B-UD-Q4_K_M')
+ SUFFIX = ['맛집', '맛집추천', '점심', '저녁', '데이트', '회식', '혼밥', '카페', '술집', '한식', '중식', '일식', '양식', '중국집', '만두', '국수', '고기집',
+           '삼겹살', '족발', '마라탕', '훠궈', '양꼬치', '덮밥', '국밥', '파스타', '브런치', '디저트', '빵집', '돈까스', '초밥', '라멘', '치킨', '피자']
+@@ -125,7 +127,7 @@
+         if attempt:
+             body['messages'] += [{'role': 'assistant', 'content': prev_text},
+                                  {'role': 'user', 'content': '점검에서 아래 문제가 나왔다. 지침을 지켜서 글 전체를 처음부터 다시 출력해라(글만):\n' + '\n'.join('- ' + f for f in fails)}]
+-        r = json.load(urllib.request.urlopen(urllib.request.Request(LLM_URL, data=json.dumps(body).encode('utf-8'), headers={'Content-Type': 'application/json'}), timeout=1800))
++        r = json.load(urllib.request.urlopen(local_llm.make_request(LLM_URL, body), timeout=1800))
+         u = r.get('usage', {})
+         t = re.sub(r'^```\w*\n|\n```$', '', (r['choices'][0]['message'].get('content') or '').strip()).strip()
+         ok, fails, chk = check(d, t, store, typ)
+--- a/blog-rank/writer/blog_pipeline.py
++++ b/blog-rank/writer/blog_pipeline.py
+@@ -11,7 +11,9 @@
+ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE); sys.path.insert(0, HERE)
+ import photo_sheet, kw_recommend as kr, export_post
+ 
+-LLM_URL = os.environ.get('BLOG_LLM_URL', 'http://127.0.0.1:18435/v1/chat/completions')
++import local_llm
++
++LLM_URL = os.environ.get('BLOG_LLM_URL', local_llm.DEFAULT_URL)
+ LLM_MODEL = os.environ.get('BLOG_LLM_MODEL', 'Qwen3.8-27B-UD-Q4_K_M')
+ SKILL_REF = r'E:\blog-rank-project\.hermes\skills\blog-post-writer\references'
+ T0 = time.time()
+@@ -23,7 +25,7 @@
+ 
+ def llm(messages, max_tokens=3000, temperature=0.7):
+     body = {'model': LLM_MODEL, 'messages': messages, 'max_tokens': max_tokens, 'temperature': temperature}
+-    req = urllib.request.Request(LLM_URL, data=json.dumps(body).encode('utf-8'), headers={'Content-Type': 'application/json'})
++    req = local_llm.make_request(LLM_URL, body)
+     r = json.load(urllib.request.urlopen(req, timeout=900))
+     return (r['choices'][0]['message'].get('content') or '').strip()
+ 

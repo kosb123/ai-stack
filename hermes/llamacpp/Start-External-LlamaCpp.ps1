@@ -1,4 +1,7 @@
 $ErrorActionPreference = 'Stop'
+$startMutex = New-Object System.Threading.Mutex($false, 'Local\JunLocalLlama18434Start')
+if (-not $startMutex.WaitOne(0)) { $startMutex.Dispose(); exit 0 }
+try {
 
 $runtimeRoot = 'C:\Users\jun\AppData\Local\Hermes\runtimes\llamacpp'
 $serverExe = 'C:\Users\jun\AppData\Local\hermes\tools\llamacpp-cuda-11370-win32-x64\llama-server.exe'
@@ -72,3 +75,8 @@ Start-Process -FilePath $serverExe `
     -WindowStyle Hidden `
     -RedirectStandardOutput $stdoutLog `
     -RedirectStandardError $stderrLog
+
+} finally {
+    $startMutex.ReleaseMutex()
+    $startMutex.Dispose()
+}
