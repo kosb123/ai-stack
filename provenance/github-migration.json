@@ -1,0 +1,16 @@
+[
+  {
+    "repository": "kosb123/omni-autotune",
+    "archived": true,
+    "notice_commit": "b73fd962527d185214a42dd597bbd4ad39a7517d",
+    "homepage": "https://github.com/kosb123/ai-stack",
+    "private": true
+  },
+  {
+    "repository": "kosb123/omniroute-claude-setup",
+    "archived": true,
+    "notice_commit": "cc3e24f47dbf690abe411c04894e288331436cc2",
+    "homepage": "https://github.com/kosb123/ai-stack",
+    "private": true
+  }
+]

@@ -18,4 +18,14 @@
 
 실제 로컬 자격 증명 후보값을 메모리에서만 비교하는 추가 검사를 수행했다. 이는 검사한 값이 포함되지 않았다는 증거이며, 알려지지 않은 모든 비밀이 없다는 보증은 아니다. 새 비밀값을 추가하기 전에도 같은 검사를 수행한다.
 
-CI는 이 오프라인 검사들을 다시 실행한다. 로컬 검사 결과와 GitHub Actions의 원격 결과는 구분한다.
+첫 커밋의 [GitHub Actions](https://github.com/kosb123/ai-stack/actions/runs/41372723714)에서도 같은 검사들이 통과했다. 로컬 검사 결과와 GitHub Actions의 원격 결과는 구분한다.
+
+## 작업에 적용한 원칙
+
+- Model the Domain으로 원본·대상·파일 형식을 매니페스트 항목으로 표현했다.
+- Boundary Discipline으로 외부 설정의 비밀값을 내보내기 경계에서 제거했다.
+- Separate Before Serializing Shared State로 담당 파일을 나누고 최종 내보내기와 커밋은 순차 수행했다.
+- Foundational Thinking과 Build the Lever로 파일 통합 전에 내보내기·검사 도구를 만들었다.
+- Sequence Work into Verifiable Units로 파일 수집, 안전성 수정, 테스트, 푸시와 아카이브를 각각 확인했다.
+- Fix Root Causes로 원본 덮어쓰기와 경로 치환 실패를 재현한 뒤 도구에서 수정했다.
+- Prove It Works로 원본 해시, 실제 비밀값 대조, 오프라인 테스트와 원격 CI를 확인했다.
