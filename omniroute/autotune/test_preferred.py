@@ -357,7 +357,26 @@ class RequiredToolGateTests(unittest.TestCase):
             a.probe_required_tool(self.M)
         body, headers = api.call_args.args[2], api.call_args.kwargs["headers"]
         self.assertEqual(body["tool_choice"], "required")
+        self.assertEqual(body["reasoning_effort"], a.CONFIG["probe_effort"])
         self.assertEqual(headers.get("x-omniroute-no-memory"), "true")
+
+    def test_truncated_required_tool_is_not_cached(self):
+        body = {"choices": [{"finish_reason": "length", "message": {"content": None}}]}
+        state = {}
+        with patch.object(a, "api", return_value=(200, body, 1)), patch.object(a, "log"):
+            ok, why = a.required_tool_ok(state, self.M, False)
+        self.assertTrue(ok)
+        self.assertIn("truncat", why.lower())
+        self.assertNotIn(self.M, state.get("required_tool", {}))
+
+    def test_transient_required_tool_errors_are_not_cached(self):
+        for status in (500, 502, 503, 504):
+            state = {}
+            with self.subTest(status=status), patch.object(a, "api", return_value=self.reply(status=status)):
+                ok, why = a.required_tool_ok(state, self.M, False)
+                self.assertTrue(ok)
+                self.assertIn("not checked", why)
+                self.assertNotIn(self.M, state.get("required_tool", {}))
 
 
 class SlowSuccessTests(unittest.TestCase):
@@ -466,6 +485,27 @@ class HindsightLaneTests(unittest.TestCase):
         self.assertIn("too slow", res["err"])
         with patch.object(a, "api", return_value=(200, body, 12.0)):
             self.assertTrue(a.probe_structured("m")["ok"])
+
+    def test_truncated_structured_response_is_inconclusive_and_not_cached(self):
+        body = {"choices": [{"finish_reason": "length", "message": {"content": '{"facts":[{"what":"incomplete'}}]}
+        state = {}
+        with patch.object(a, "api", return_value=(200, body, 2.0)) as api, patch.object(a, "log"):
+            ok, why = a.structured_ok(state, "m", False)
+        self.assertFalse(ok)
+        self.assertIn("truncat", why.lower())
+        self.assertNotIn("m", state.get("structured", {}))
+        self.assertGreaterEqual(api.call_args.args[2]["max_tokens"], 4096)
+        self.assertEqual(api.call_args.args[2]["reasoning_effort"], a.CONFIG["probe_effort"])
+
+    def test_transient_structured_errors_are_not_cached(self):
+        for status in (0, 500, 502, 503, 504):
+            state = {}
+            response = {"ts": a.now_utc().isoformat(), "ok": False, "status": status, "latency": 1, "err": "temporary"}
+            with self.subTest(status=status), patch.object(a, "probe_structured", return_value=response), patch.object(a, "log"):
+                ok, why = a.structured_ok(state, "m", False)
+                self.assertFalse(ok)
+                self.assertIn("not checked", why)
+                self.assertNotIn("m", state.get("structured", {}))
 
 
 class SelectedModelsTests(unittest.TestCase):
@@ -639,6 +679,16 @@ class LaneRuleTests(unittest.TestCase):
     def lanes(self, sel, lane_pins):
         return {lane["combo"]: [d["model"] for d in order] for lane, order in a.lane_orders(sel, lane_pins)}
 
+    def test_unqualified_pin_cannot_enter_hindsight_lane(self):
+        healthy = _cand("grok-cli/grok-4.7")
+        for selected, pins in [([healthy, _cand(ARGON, structured_ok=False)], {}),
+                               ([healthy], {ARGON: _cand(ARGON, structured_ok=False)}),
+                               ([healthy], {ARGON: {"model": ARGON, "provider": "agy", "quality": 0.7}})]:
+            with self.subTest(selected=selected, pins=pins):
+                lanes = self.lanes(selected, pins)
+                self.assertNotIn(ARGON, lanes["hindsight-structured"])
+                self.assertEqual(lanes["hermes-fast-agent"], [d["model"] for d in selected])
+
     def test_primary_moves_to_front(self):
         sel = [_cand("agy/gemini-3.8-flash-medium"), _cand("grok-cli/grok-4.7"), _cand("agy/gemini-3-flash")]
         lanes = self.lanes(sel, {})
@@ -647,7 +697,7 @@ class LaneRuleTests(unittest.TestCase):
 
     def test_lane_pin_inserted_at_its_rank_only_in_its_lane(self):
         sel = [_cand("agy/gemini-3.8-flash-medium"), _cand("agy/gemini-3-flash"), _cand("grok-cli/grok-4.7")]
-        lanes = self.lanes(sel, {ARGON: _cand(ARGON, structured_ok=False)})
+        lanes = self.lanes(sel, {ARGON: _cand(ARGON)})
         self.assertEqual(lanes["hindsight-structured"],
                          [ARGON, "agy/gemini-3.8-flash-medium", "agy/gemini-3-flash", "grok-cli/grok-4.7"])
         self.assertEqual(lanes["hermes-fast-agent"], [d["model"] for d in sel])
@@ -664,7 +714,7 @@ class LaneRuleTests(unittest.TestCase):
             self.assertIn(m, lanes["hindsight-structured"])
 
     def test_pinned_model_already_selected_is_moved_not_duplicated(self):
-        sel = [_cand("grok-cli/grok-4.7"), _cand("agy/gemini-3-flash"), _cand(ARGON, structured_ok=False)]
+        sel = [_cand("grok-cli/grok-4.7"), _cand("agy/gemini-3-flash"), _cand(ARGON)]
         lanes = self.lanes(sel, {})
         self.assertEqual(lanes["hindsight-structured"], [ARGON, "grok-cli/grok-4.7", "agy/gemini-3-flash"])
 
@@ -722,6 +772,8 @@ class LanePinCooldownTests(_LifecycleBase):
 
     def hindsight_order(self):
         pins, cooling, _, _ = a.lane_pin_candidates(self.state, self.cat, self.hist, self.quota, self.conns, {})
+        for candidate in pins.values():
+            candidate["structured_ok"] = True
         orders = a.lane_orders(self.sel, pins, cooling)
         return [d["model"] for lane, order in orders if lane["combo"] == "hindsight-structured" for d in order]
 
@@ -825,6 +877,9 @@ class LanePinCooldownTests(_LifecycleBase):
             self.assertEqual(body, {"name": lane["name"], "strategy": lane["strategy"], "config": lane["config"], "models": fallback})
             self.assertEqual(len(list((root / "backups").glob("*.json"))), 1)
             patched["verify_combo"].assert_called_once_with("hindsight-structured")
+            for outcome in ("ROLLBACK FAILED 500", "cannot update: lane missing", "cannot update: no surviving models"):
+                with self.subTest(outcome=outcome), patch.object(a, "api", return_value=(200, {"combos": [lane]}, 0)), patch.object(a, "remove_cooling_lane_pins", return_value=(outcome, [])):
+                    self.assertEqual(a.cmd_tune(), 1)
 
     def test_verification_failure_restores_original_lane(self):
         lane = {"id": "id", "name": "hindsight-structured", "models": [{"model": ARGON}, {"model": "p/fallback", "weight": 9}],
@@ -860,6 +915,11 @@ class VerifyComboTests(unittest.TestCase):
                 self.assertEqual(api.call_count, 2)
         with patch.object(a, "api", return_value=(200, good, 1)) as api:
             self.assertTrue(a.verify_combo()[0])
+            body = api.call_args.args[2]
+            self.assertGreaterEqual(body["max_tokens"], 1024)
+            self.assertEqual(body["reasoning_effort"], a.CONFIG["probe_effort"])
+            self.assertEqual(body["tool_choice"], "required")
+            self.assertIn("status", body["tools"][0]["function"]["parameters"]["required"])
             first_request = api.call_args.args[2]["messages"][0]["content"]
             a.verify_combo()
             self.assertNotEqual(first_request, api.call_args.args[2]["messages"][0]["content"])
@@ -933,11 +993,60 @@ class HedgingTests(unittest.TestCase):
         self.assertEqual(a.second_from_other_group(list(sel), {}), sel)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class RoleQuarantineRegressionTests(unittest.TestCase):
+    def test_tune_checks_lane_only_pin_before_admission(self):
+        for required, structure, duplicate, lane_result in [
+                ((False, 'invalid query'), (True, ''), False, 'checked'),
+                ((True, 'not checked (429)'), (True, ''), False, 'checked'),
+                ((True, ''), (False, 'invalid JSON'), False, 'checked'),
+                ((True, ''), (True, ''), False, 'checked'),
+                ((True, 'not checked (429)'), (True, ''), True, 'checked'),
+                ((True, ''), (True, ''), True, 'checked'),
+                *[((True, ''), (True, ''), False, result) for result in
+                  ['CREATE FAILED 500', 'UPDATE FAILED 500', 'ROLLED BACK (verify failed)',
+                   'created but VERIFY FAILED: bad reply', 'unavailable', 'malformed']]]:
+            model = ARGON if duplicate else 'provider/working'
+            with self.subTest(required=required, structure=structure, duplicate=duplicate), tempfile.TemporaryDirectory() as temp, ExitStack() as stack:
+                row = {**_cand(model), 'score': 0.8, 'success': 1.0, 'median_s': 1,
+                       'quota': None, 'n48h': 1, 'last_ok': a.now_utc().isoformat()}
+                pin = {**_cand(ARGON), 'score': 0.8, 'success': 1.0, 'median_s': 1,
+                       'quota': None, 'n48h': 1}
+                pin.pop('structured_ok')
+                combo = {'id': 'main-id', 'name': 'hermes-fast-agent', 'models': [{'model': 'old/model'}],
+                         'strategy': 'priority', 'config': {}}
+                mocks = {'load_state': {'probes': {}}, 'db': object(), 'combo_get': combo,
+                         'catalog': {}, 'history': {}, 'quotas': {}, 'connections': {}, 'quality': {},
+                         'provider_blocks': {}, 'free_budgets': {}, 'live_resilience': {}, 'route_pins': {},
+                         'preferred_candidates': ([], [], []), 'lane_pin_candidates': ({ARGON: pin}, set(), [], []),
+                         'pick_probes': [], 'selected_models': {model: row['provider']}, 'evaluate': (0.8, row),
+                         'recent_hangs': {}, 'write_report': 'offline', 'update_allowed': True,
+                         'verify_combo': (True, 'ok')}
+                root = Path(temp)
+                (root / 'backups').mkdir()
+                stack.enter_context(patch.object(a, 'ROOT', root))
+                for name, value in mocks.items():
+                    stack.enter_context(patch.object(a, name, return_value=value))
+                def api_reply(method, path, *args, **kwargs):
+                    if method == 'GET' and path == '/api/combos' and lane_result == 'unavailable':
+                        return 503, {}, 0
+                    if method == 'GET' and path == '/api/combos' and lane_result == 'malformed':
+                        return 200, {}, 0
+                    return 200, {'combos': []}, 0
+                stack.enter_context(patch.object(a, 'api', side_effect=api_reply))
+                stack.enter_context(patch.object(a, 'save_state'))
+                stack.enter_context(patch.object(a, 'log'))
+                req = stack.enter_context(patch.object(a, 'required_tool_ok', side_effect=lambda state, m, dry: required if m == ARGON else (True, '')))
+                structured = stack.enter_context(patch.object(a, 'structured_ok', side_effect=lambda state, m, dry: structure if m == ARGON else (True, '')))
+                sync = stack.enter_context(patch.object(a, 'sync_lane', return_value=lane_result))
+                exit_code = a.cmd_tune()
+                self.assertEqual(sum(call.args[1] == ARGON for call in req.call_args_list), 1)
+                self.assertEqual(any(call.args[1] == ARGON for call in structured.call_args_list), required == (True, ''))
+                self.assertEqual(pin['structured_ok'], required == (True, '') and structure[0])
+                hindsight = next((call.args[1] for call in sync.call_args_list if call.args[0] == 'hindsight-structured'), [])
+                self.assertEqual(ARGON in [d['model'] for d in hindsight],
+                                 required == (True, '') and structure[0] and lane_result not in ('unavailable', 'malformed'))
+                self.assertEqual(exit_code, 1 if lane_result != 'checked' or (duplicate and not hindsight) else 0)
+
     def test_hindsight_tool_failure_does_not_remove_healthy_hermes_candidate(self):
         model = 'provider/working'
         row = {'model': model, 'provider': 'provider', 'score': 0.8, 'quality': 0.8,
@@ -1005,3 +1114,7 @@ class RoleQuarantineRegressionTests(unittest.TestCase):
             with self.subTest(facts=facts), patch.object(a, "api", return_value=(200, reply, 1)) as api:
                 self.assertEqual(a.probe_structured("m")["ok"], expected)
                 self.assertEqual(api.call_args.kwargs["headers"].get("x-omniroute-no-cache"), "true")
+
+
+if __name__ == "__main__":
+    unittest.main()

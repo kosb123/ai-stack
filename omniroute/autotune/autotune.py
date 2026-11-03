@@ -802,7 +802,7 @@ def probe_json_schema(model: str) -> dict:
             "name": "response", "strict": True,
             "schema": {"type": "object", "properties": {"ok": {"type": "boolean"}},
                        "required": ["ok"], "additionalProperties": False}}},
-        "max_tokens": 200, "stream": False,
+        "max_tokens": 200, "stream": False, "reasoning_effort": CONFIG["probe_effort"],
     }
     # OmniRoute injects its own memory_* tools into requests; on a one-line prompt some models call them instead of
     # answering (gemini-3.8: 2 of 3 replies). `x-omniroute-no-memory` is OmniRoute's documented opt-out
@@ -828,6 +828,7 @@ def probe_required_tool(model: str) -> dict:
     pad = (FILLER * (4000 * 4 // len(FILLER) + 1))[: 4000 * 4]
     body = {
         "model": model, "max_tokens": 400, "stream": False, "tool_choice": "required",
+        "reasoning_effort": CONFIG["probe_effort"],
         "messages": [{"role": "system", "content": "You answer questions about the user from their memory bank.\n" + pad},
                      {"role": "user", "content": "What operating system does the user use?"}],
         "tools": [{"type": "function", "function": {
@@ -852,8 +853,11 @@ def probe_required_tool(model: str) -> dict:
                 pass
             if ok:
                 break
-    err = "" if ok else (str((data or {}).get("error", ""))[:160] if status != 200 else "tool call written as text, not tool_calls")
-    return {"ts": now_utc().isoformat(), "ok": ok, "status": status, "latency": round(secs, 1), "err": err}
+    truncated = choice.get("finish_reason") == "length"
+    err = "" if ok else (str((data or {}).get("error", ""))[:160] if status != 200 else
+                         "response truncated by token limit" if truncated else "tool call written as text, not tool_calls")
+    return {"ts": now_utc().isoformat(), "ok": ok, "status": status, "latency": round(secs, 1), "err": err,
+            "truncated": truncated}
 
 
 def probe_structured(model: str) -> dict:
@@ -863,7 +867,8 @@ def probe_structured(model: str) -> dict:
                       f"assistant: 확인했습니다. ledger.py의 monthly_total 함수를 수정했고 pytest 결과를 기록했습니다."
                       for i in range(1, 25))
     body = {
-        "model": model, "max_tokens": 2000, "stream": False, "temperature": 0.1,
+        "model": model, "max_tokens": 4096, "stream": False, "temperature": 0.1,
+        "reasoning_effort": CONFIG["probe_effort"],
         "messages": [{"role": "system", "content": "Extract durable facts from the conversation. Answer only with JSON."},
                      {"role": "user", "content": convo}],
         "response_format": {"type": "json_schema", "json_schema": {"name": "facts", "strict": True, "schema": {
@@ -875,7 +880,9 @@ def probe_structured(model: str) -> dict:
     timeout = CONFIG["structured_max_s"] + 30
     status, data, secs = api("POST", "/v1/chat/completions", body, timeout=timeout,
                              headers={"x-omniroute-no-memory": "true", "x-omniroute-no-cache": "true"})
-    content = ((data or {}).get("choices") or [{}])[0].get("message", {}).get("content") if status == 200 else None
+    choice = ((data or {}).get("choices") or [{}])[0] if status == 200 else {}
+    content = choice.get("message", {}).get("content")
+    truncated = choice.get("finish_reason") == "length"
     ok, err = False, ""
     try:
         facts = json.loads(content).get("facts") if isinstance(content, str) else None
@@ -886,11 +893,14 @@ def probe_structured(model: str) -> dict:
         ok = False
     if status != 200:
         err = str((data or {}).get("error", ""))[:160] or f"no answer in {round(secs)}s"
+    elif truncated:
+        ok, err = False, "response truncated by token limit"
     elif not ok:
         err = "reply is not the requested JSON"
     elif secs > CONFIG["structured_max_s"]:
         ok, err = False, f"too slow ({round(secs)}s > {CONFIG['structured_max_s']}s)"
-    return {"ts": now_utc().isoformat(), "ok": ok, "status": status, "latency": round(secs, 1), "err": err}
+    return {"ts": now_utc().isoformat(), "ok": ok, "status": status, "latency": round(secs, 1), "err": err,
+            "truncated": truncated}
 
 
 def recent_hangs(con, hours: int = 48) -> dict:
@@ -917,7 +927,9 @@ def structured_ok(state: dict, model: str, dry_run: bool) -> tuple[bool, str]:
         return False, "not checked (dry run)"
     for _ in range(2):
         res = probe_structured(model)
-        if res["status"] in (402, 429, 503):
+        if res.get("truncated"):
+            return False, f"not checked ({res['err']})"
+        if res["status"] in (0, 402, 429) or 500 <= res["status"] < 600:
             return False, f"not checked ({res['status']})"  # no verdict: stays out of the lane until it can be tested
         if not res["ok"]:
             break
@@ -942,7 +954,9 @@ def required_tool_ok(state: dict, model: str, dry_run: bool) -> tuple[bool, str]
     passes = 3 if last_fail and tnow - last_fail < timedelta(days=7) else 2
     for _ in range(passes):
         res = probe_required_tool(model)
-        if res["status"] in (402, 429, 503) or (res["status"] == 0):
+        if res.get("truncated"):
+            return True, f"not checked ({res['err']})"
+        if res["status"] in (0, 402, 429) or 500 <= res["status"] < 600:
             return True, f"not checked ({res['status']})"  # quota/availability is judged elsewhere
         if not res["ok"]:
             break
@@ -1378,10 +1392,12 @@ def put_combo(combo: dict, models: list[dict], strategy: str | None = None) -> t
 
 
 def verify_combo(name: str | None = None) -> tuple[bool, str]:
-    body = {"model": name or CONFIG["combo_name"], "max_tokens": 60, "stream": False,
+    body = {"model": name or CONFIG["combo_name"], "max_tokens": 1024, "stream": False,
+            "reasoning_effort": CONFIG["probe_effort"], "tool_choice": "required",
             "messages": [{"role": "user", "content": f"Call the report_status tool with status ok. Request {uuid.uuid4().hex}"}],
             "tools": [{"type": "function", "function": {"name": "report_status", "description": "report",
-                       "parameters": {"type": "object", "properties": {"status": {"type": "string"}}}}}]}
+                       "parameters": {"type": "object", "properties": {"status": {"type": "string"}},
+                                      "required": ["status"]}}}]}
     for attempt in (1, 2):
         # 2026-10-28: same memory opt-out as probe(); without it OmniRoute adds memory_* tools and the reply can
         # call memory_save instead of report_status (the 23:14 tune run's verify request got 39 memories injected)
@@ -1431,7 +1447,7 @@ def apply_lane_rules(lane: dict, order: list[dict], selected: list[dict], lane_p
             order = [x for x in order if x["model"] != pin["model"]]
             continue
         d = next((x for x in selected if x["model"] == pin["model"]), None) or lane_pins.get(pin["model"])
-        if d is None:
+        if d is None or (lane.get("structured") and not d.get("structured_ok")):
             continue
         order = [x for x in order if x is not d]
         order.insert(pin["rank"] - 1, d)
@@ -1701,22 +1717,35 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
         action = "would update (dry run)"
 
     lane_lines = []
+    lane_failed = False
     if safe_to_update or lane_cooling:
         st, data, _ = api("GET", "/api/combos")
+        if st == 200 and (not isinstance(data, dict) or not isinstance(data.get("combos"), list)):
+            st = 0
         combos = (data or {}).get("combos", []) if st == 200 else []
         if safe_to_update:
             if any(lane.get("structured") for lane in CONFIG["lanes"]):
                 hangs = recent_hangs(con)
-                for d in lane_base:
+                verdicts = {}
+                for d in [*lane_base, *lane_pins.values()]:
+                    if d["model"] in verdicts:
+                        d["structured_ok"], d["structured_why"] = verdicts[d["model"]]
+                        continue
                     if hang_pattern(d["model"], hangs):
                         d["structured_ok"], d["structured_why"] = False, f"hung {hangs[d['model']]}x in 48h"
                     else:
                         req_ok, req_why = required_tool_ok(state, d["model"], dry_run)
-                        if req_ok:
+                        if req_ok and not req_why.startswith("not checked"):
                             d["structured_ok"], d["structured_why"] = structured_ok(state, d["model"], dry_run)
                         else:
                             d["structured_ok"], d["structured_why"] = False, f"tool_choice=required: {req_why}"
+                    verdicts[d["model"]] = d["structured_ok"], d["structured_why"]
             lane_work = lane_orders(lane_base, lane_pins, lane_cooling)
+            present = {lane["combo"] for lane, _ in lane_work}
+            for lane in CONFIG["lanes"]:
+                if lane.get("structured") and lane["combo"] not in present:
+                    lane_failed = True
+                    lane_lines.append(f"| {lane['combo']} | {lane['role']} | - | - | - | no vetted candidates |")
         else:
             lane_work = [(lane, []) for lane in CONFIG["lanes"]
                          if any(pin["model"] in lane_cooling for pin in lane.get("pinned", []))]
@@ -1724,6 +1753,7 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
             if lane["combo"] == CONFIG["combo_name"]:
                 continue
             if st != 200:
+                lane_failed = True
                 lane_lines.append(f"| {lane['combo']} | {lane['role']} | - | - | - | combo list unavailable |")
                 continue
             if safe_to_update:
@@ -1733,6 +1763,8 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
                 cooled = {pin["model"] for pin in lane.get("pinned", [])} & lane_cooling
                 res, retained = remove_cooling_lane_pins(lane, cooled, combos, dry_run)
                 first = retained[0] if retained else {}
+            if any(s in res for s in ("CREATE FAILED", "UPDATE FAILED", "ROLLED BACK", "ROLLBACK FAILED", "VERIFY FAILED", "cannot update:")):
+                lane_failed = True
             if not dry_run:
                 log(f"lane {lane['combo']}: {res}")
             model = first.get("model", "-")
@@ -1808,7 +1840,7 @@ def cmd_tune(dry_run: bool = False, reason: str = "scheduled") -> int:
         state["resets"] = [{"at": at, "models": ms[:5], "count": len(ms)} for at, ms in sorted(comebacks.items())][:100]
         save_state(state)
     print(f"{action}; {len(selected)} candidates; report {path}")
-    return 0 if not action.startswith(("UPDATE FAILED", "ROLLED BACK")) else 1
+    return 1 if lane_failed or action.startswith(("UPDATE FAILED", "ROLLED BACK")) else 0
 
 
 def log_stray_auto(con, state: dict) -> None:

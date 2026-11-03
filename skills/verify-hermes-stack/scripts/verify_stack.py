@@ -1,6 +1,7 @@
 """Isolated, evidence-preserving Hermes stack checks. Never deletes a bank."""
 import argparse
 import json
+import ntpath
 import os
 from pathlib import Path
 import shutil
@@ -157,7 +158,8 @@ def launch():
 
 def tool_ok(events, nonce, filepath):
     calls = [e for e in events if e.get('type') == 'tool_use' and e.get('name') == 'read_file'
-             and filepath in str(e.get('input', {}).get('path', ''))]
+             and isinstance(e.get('input', {}).get('path'), str)
+             and ntpath.normcase(ntpath.normpath(filepath)) == ntpath.normcase(ntpath.normpath(e['input']['path']))]
     results = [e for e in events if e.get('type') == 'tool_result' and e.get('name') == 'read_file'
                and not e.get('is_error') and nonce in e.get('output', '')]
     matched = any(c.get('tool_call_id') and c.get('tool_call_id') == r.get('tool_call_id') for c in calls for r in results)

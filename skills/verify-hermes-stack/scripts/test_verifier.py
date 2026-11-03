@@ -117,6 +117,22 @@ class VerifierTests(unittest.TestCase):
         del events[1]['tool_call_id']
         self.assertFalse(v.tool_ok(events, 'secret', 'C:\\work\\note'))
 
+    def test_tool_matches_normalized_windows_path_only(self):
+        expected = r'C:\work\folder\note'
+        events = [{'type': 'tool_use', 'name': 'read_file', 'tool_call_id': '1', 'input': {'path': 'c:/WORK/folder/./note'}},
+                  {'type': 'tool_result', 'name': 'read_file', 'tool_call_id': '1', 'output': 'secret'},
+                  {'type': 'result', 'exit_code': 0, 'text': 'secret'}]
+        self.assertTrue(v.tool_ok(events, 'secret', expected))
+        for path in (r'C:\work\folder\note.bak', r'C:\other\work\folder\note'):
+            events[0]['input']['path'] = path
+            self.assertFalse(v.tool_ok(events, 'secret', expected))
+        events[0]['input']['path'] = 'c:/WORK/folder/./note'
+        events[1]['is_error'] = True
+        self.assertFalse(v.tool_ok(events, 'secret', expected))
+        events[1]['is_error'] = False
+        events[2]['exit_code'] = 1
+        self.assertFalse(v.tool_ok(events, 'secret', expected))
+
     def test_forced_tool_rejects_text_and_wrong_name(self):
         self.assertFalse(v.combo_tool_ok({'choices': [{'message': {'content': 'search_observations'}}]}))
         self.assertFalse(v.combo_tool_ok({'choices': [{'message': {'tool_calls': [{'function': {'name': 'wrong', 'arguments': '{"query":"x"}'}}]}}]}))
