@@ -27,7 +27,7 @@ services:
     # this container hits its own ceiling and dies visibly rather than starving
     # the whole host of pids.
     pids_limit: 2048
-    mem_limit: 1536m
+    mem_limit: 3072m
     # Includes the shared 30s adapter-settlement window and final cleanup.
     stop_grace_period: 90s
     ports:
@@ -44,9 +44,31 @@ services:
       PAPERCLIP_TOOL_ACTION_SIGNING_SECRET: ${LOCAL_SECRET}
     volumes:
       - paperclip-data:/paperclip
+      # Only this folder is shared with agents; never mount all of E:.
+      - E:/projects:/workspace
     depends_on:
       db:
         condition: service_healthy
+
+  # Hermes runs on Windows. Sharing the server's network gives it a loopback
+  # address, because agent verification rejects plain HTTP to any other host.
+  hermes-relay:
+    image: ghcr.io/paperclipai/paperclip:latest
+    network_mode: "service:server"
+    mem_limit: 64m
+    entrypoint:
+      - node
+      - -e
+      - |
+        const net = require("net");
+        net.createServer((client) => {
+          const hermes = net.connect(8642, "host.docker.internal");
+          client.pipe(hermes).pipe(client);
+          client.on("error", () => hermes.destroy());
+          hermes.on("error", () => client.destroy());
+        }).listen(8642, "127.0.0.1");
+    depends_on:
+      - server
 
 volumes:
   pgdata:
