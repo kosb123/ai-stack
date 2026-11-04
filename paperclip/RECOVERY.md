@@ -58,5 +58,5 @@ autoMemoryReclaim=gradual
 - `Provider antigravity circuit breaker is open`이 나오면 원인 요청을 먼저 확인한 뒤 `POST /api/resilience/reset`으로 해제.
 
 ## 9. Hindsight 사용량 절감 (2026-11-04)
-- Hermes `paperclip`, `google` 프로필은 Hindsight를 쓰지 않음. `memory.provider: local`, `hindsight_kb` 비활성.
+- Hermes `paperclip`, `google` 프로필은 Hindsight를 쓰지 않음. `memory.provider`를 비우고 `hindsight_kb`를 비활성화함.
 - 지식 페이지 25개는 소화 직후 갱신을 끄고 매일 18:00 UTC에 갱신함. 변경 전 트리거 백업은 `E:\hindsight\archive\mental-model-triggers-before-20261104.json`.
