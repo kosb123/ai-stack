@@ -1,6 +1,6 @@
 # Local execution and the blog connection
 
-The user selects the local Qwen model in Hermes or starts the blog writer; both use one authenticated llama.cpp server at 18434.
+The mapped default path selects local Qwen in Hermes or uses the blog client's default authenticated llama.cpp server at 18434. The full blog writer also supports `BLOG_LLM_URL`; this journey does not validate every external override.
 
 ## Sub-features
 
@@ -21,7 +21,7 @@ Preconditions:
 
 - Launch and Doctor pass, the model is idle, and the deployed blog helper exists.
 
-- **File tool.** Run `python $ctl local-tool --run $run`. Require a real `read_file` tool event, matching result, one successful final result with the unknown nonce, and the invocation-scoped log pointing to 18434. The disposable profile disables fallback.
+- **File tool.** Run `python $ctl local-tool --run $run`. The controller first requires the installed provider URL to be `http://127.0.0.1:18434/v1`. Require a real `read_file` tool event, matching result, one successful final result with the unknown nonce, and that endpoint in the invocation-scoped log. The disposable profile disables fallback.
 - **Blog authentication.** Run `python $ctl blog-direct --run $run`. Require deployed helper equality, HTTP 200 with an actual `OK` answer, and refusal on 18435. Read `blog-direct-response.json`.
 - **Desktop entry.** No Desktop automation is implemented by this controller. In an explicitly owned UI test chat, select local Qwen, ask it to read a fresh unknown test-file value, create/resume the chat, and capture actions/screenshots plus matched request logs. Leave this entry unverified until those artifacts exist; CLI success does not cover it.
 
