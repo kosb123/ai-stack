@@ -911,7 +911,7 @@
       "kind": "json"
     },
     {
-      "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hermes-local.patch",
+      "source": "C:\\Users\\jun\\AppData\\Local\\Hermes\\runtimes\\llamacpp\\local-provider-identity.patch",
       "target": "hermes/patches/installed-source.patch",
       "kind": "copy"
     },

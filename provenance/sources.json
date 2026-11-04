@@ -1358,10 +1358,10 @@
     "redacted": true
   },
   {
-    "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\hermes-local.patch",
+    "source": "C:\\Users\\jun\\AppData\\Local\\Hermes\\runtimes\\llamacpp\\local-provider-identity.patch",
     "target": "hermes/patches/installed-source.patch",
-    "source_sha256": "740b0f9cbd69b1c6238223cf36e7378a59a3b2ee0a0b32b213faa5a9ea2bfcbd",
-    "snapshot_sha256": "740b0f9cbd69b1c6238223cf36e7378a59a3b2ee0a0b32b213faa5a9ea2bfcbd",
+    "source_sha256": "6822152e983b217b1cbb27eeb66dbaa8202467e367cb46c48c54ff880b04c912",
+    "snapshot_sha256": "6822152e983b217b1cbb27eeb66dbaa8202467e367cb46c48c54ff880b04c912",
     "redacted": false
   },
   {
