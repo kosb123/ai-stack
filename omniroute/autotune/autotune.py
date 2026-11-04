@@ -53,7 +53,15 @@ CONFIG = {
     # provider -> the only models of that provider the combo may use
     # 2026-10-29 user (later): goal is to use every quota (AI Pro paid + free); medium stays #1 but the other
     # antigravity models (Gemini pool and Claude/GPT pool) are candidates again. Was {"antigravity": [medium]}.
-    "provider_only_models": {},
+    # 2026-11-04 user: Gemini on Antigravity must stay usable. Claude-pool probes answered 429 and their failures
+    # opened the provider-wide breaker, which also blocked Gemini. Was {} (every antigravity model a candidate).
+    "provider_only_models": {
+        "antigravity": [f"{route}/{model}" for route in ("agy", "antigravity") for model in (
+            "gemini-3-flash", "gemini-3.1-flash-lite", "gemini-3.5-flash-lite", "gemini-3.6-flash-low",
+            "gemini-3.8-flash-low", "gemini-3.8-flash-medium", "gemini-3.8-flash-high", "gemini-3.8-flash-tiered",
+            "gemini-4-argon-low", "gemini-4-argon-medium", "gemini-4-argon-high", "gpt-oss-120b-medium",
+        )],
+    },
     # 2026-10-29 user: agy is the same provider as antigravity (OmniRoute runs agy on the antigravity executor with
     # the same Google accounts and shared gemini family cooldowns); provider limits and rules apply to the group
     "provider_groups": {"agy": "antigravity"},
