@@ -49,3 +49,8 @@ autoMemoryReclaim=gradual
 - `docker-server-1`을 다시 만들면 `hermes-relay`도 함께 다시 시작해야 함: `docker compose up -d`
 - 완료 보고 키 `PAPERCLIP_BRIDGE_API_KEY`는 프로젝트 단위로 제한됨. 프로젝트를 추가하면 범위를 넓힌 키로 다시 발급해야 함.
 - Hermes API 키: default와 paperclip 프로필 `.env`의 `API_SERVER_KEY`. 서로 다른 값이어야 함.
+
+## 7. pstack 스킬 (2026-11-04)
+- Paperclip에는 `pstack` 하나만 보이게 설치함. 하위 스킬은 패키지 안 `references/skills/`에 있음.
+- 다시 만들기: `python paperclip/build_pstack_skill.py <pstack 플러그인 폴더> <출력 폴더>`
+- 결과를 컨테이너의 `/paperclip/instances/default/skills/<회사 ID>/pstack`에 복사한 뒤, 폴더가 아니라 그 안의 `SKILL.md` 파일 경로로 가져와야 함. 폴더로 가져오면 하위 스킬이 58개로 풀림.
