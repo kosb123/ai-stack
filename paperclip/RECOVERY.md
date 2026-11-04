@@ -51,6 +51,6 @@ autoMemoryReclaim=gradual
 - Hermes API 키: default와 paperclip 프로필 `.env`의 `API_SERVER_KEY`. 서로 다른 값이어야 함.
 
 ## 8. Gemini 에이전트 (2026-11-04)
-- Hermes `google` 프로필의 기본 모델은 OmniRoute 콤보 `gemini-agent`(`agy/gemini-3.8-flash-medium`, agy 연결 고정)임.
-- Antigravity의 Claude 할당량 소진(429)이 쌓이면 Gemini까지 함께 막힘. 그래서 autotune `provider_only_models`로 Antigravity 후보를 Gemini 위주로 제한함.
+- Hermes `google` 프로필의 기본 모델은 OmniRoute 콤보 `gemini-agent`임. 순서는 `gemini-3.8-flash-medium`, `gpt-oss-120b-medium`, `gemini-4-argon-medium`이고 모두 agy 연결에 고정함.
+- 할당량 풀은 Gemini, Claude/GPT, Argon으로 나뉨. Antigravity의 Claude 모델은 할당량이 남아 있어도 429를 반환했고, 이 실패가 쌓이면 공급자 전체 차단으로 Gemini까지 막힘. 그래서 Claude는 콤보와 autotune 후보에서 뺌.
 - `Provider antigravity circuit breaker is open`이 나오면 원인 요청을 먼저 확인한 뒤 `POST /api/resilience/reset`으로 해제.
