@@ -57,9 +57,9 @@
   {
     "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\README.md",
     "target": "omniroute/autotune/README.md",
-    "source_sha256": "c27d2853383274d39314ba3e52a21b812e4dba19e0468b89f00ffa9fbb0e58bf",
-    "snapshot_sha256": "a08d07887e8bf5a6b3db8178d3f8b5cf7b932d756b9186ea7eb0c1ec6ceac331",
-    "redacted": true
+    "source_sha256": "98c425e89243a66d445699161a91f4c3623fb37a3d3f3ad053e81f6576986a63",
+    "snapshot_sha256": "98c425e89243a66d445699161a91f4c3623fb37a3d3f3ad053e81f6576986a63",
+    "redacted": false
   },
   {
     "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\hs_probe.py",
@@ -1122,26 +1122,19 @@
   {
     "source": "E:\\hindsight\\start-hindsight.ps1",
     "target": "hindsight/ops/start-hindsight.ps1",
-    "source_sha256": "667bd42d28e0cabd4c585ad3d65761ede717026cc42f640a786253b90539a495",
-    "snapshot_sha256": "667bd42d28e0cabd4c585ad3d65761ede717026cc42f640a786253b90539a495",
+    "source_sha256": "2f55d4e4ada7df41691257d5d73ee0188eed1ec22151d9e982a2eb5a58fbb841",
+    "snapshot_sha256": "2f55d4e4ada7df41691257d5d73ee0188eed1ec22151d9e982a2eb5a58fbb841",
     "redacted": false
   },
   {
     "source": "E:\\hindsight\\hindsight.env",
     "target": "hindsight/native.env.example",
-    "source_sha256": "d2b455afba09492e9c2d1272bf28bec8e75b576a852eb504b2afc11b51922528",
-    "snapshot_sha256": "2d7a6242959e831d4083f9e2fe9b0bfbfc9c0c39cafa4e1c0b9f68366e9a89ac",
+    "source_sha256": "30b8ebddd87a688bb4609c8d837945c82f4a45dd4b9c41e988eef29d6698e009",
+    "snapshot_sha256": "0b07133a5b66161e8fe6bdbb584562f0fcd301e58333a40e1fc29515634304b9",
     "redacted": true,
     "adjustments": [
       "normalize text newlines to LF"
     ]
-  },
-  {
-    "source": "C:\\Users\\jun\\.hindsight\\hindsight.env",
-    "target": "hindsight/legacy-client.env.example",
-    "source_sha256": "45f0bb085354330950cf80618ef817be9f5c294022d22236fe28114b5330d2e4",
-    "snapshot_sha256": "59073be3ad3a1855edd6a139ef68ec67bea3f2e06350f79ce4ea94ae22e43e27",
-    "redacted": true
   },
   {
     "source": "C:\\Users\\jun\\.hindsight\\coding-agent.json",
@@ -1394,5 +1387,29 @@
     "source_sha256": "e8749a4f78bac45d8ce29d3c683b87205fe796f9b4eafd80da8ccf0e8cd61e78",
     "snapshot_sha256": "174e87037aa59a83c85f494e9dc644e160ce7ecf06bfc7c2b34e7a0bed461cfc",
     "redacted": true
+  },
+  {
+    "source": "E:\\hindsight\\Hindsight.vbs",
+    "target": "hindsight/ops/Hindsight.vbs",
+    "source_sha256": "432d12737abd2b8cad7bd6a47c18a6b47b8908fb2f926d77c22aede387e97920",
+    "snapshot_sha256": "432d12737abd2b8cad7bd6a47c18a6b47b8908fb2f926d77c22aede387e97920",
+    "redacted": false
+  },
+  {
+    "source": "E:\\paperclip\\docker\\docker-compose.yml",
+    "target": "paperclip/docker-compose.example.yml",
+    "source_sha256": "81f992f61d101d5191f1ac5447c44794ee22b4d1c3b82694066d044bf2708c43",
+    "snapshot_sha256": "d628ced6fc736df96c948fd762b74f8d60eb168c9aa1cdb08c6b872e9a5fa391",
+    "redacted": true,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "E:\\paperclip\\docker\\RECOVERY.md",
+    "target": "paperclip/RECOVERY.md",
+    "source_sha256": "5cf27269903512bd490b226aba006d98219206ca880009ae6e8b01c5a10db7db",
+    "snapshot_sha256": "5cf27269903512bd490b226aba006d98219206ca880009ae6e8b01c5a10db7db",
+    "redacted": false
   }
 ]

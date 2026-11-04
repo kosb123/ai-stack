@@ -4,6 +4,12 @@ Hermes, OmniRoute, Hindsight의 설정 예시와 운영 스크립트, 검증 도
 
 ## 시작하기
 
+전체 서비스 상태는 아래 명령 하나로 확인한다. 읽기 전용이며 서비스를 시작하거나 멈추지 않는다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\status.ps1
+```
+
 - [구성 요소와 실행 경로](docs/components.md)에서 파일과 로컬 서비스의 관계를 확인한다.
 - [운영과 검증](docs/operations.md)에서 변경 및 검증 범위를 확인한다.
 - [출처와 이전 작업](docs/migration.md)에서 기존 저장소와 미완료 작업을 확인한다.
