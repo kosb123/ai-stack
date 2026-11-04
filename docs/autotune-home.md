@@ -44,6 +44,8 @@ python scripts/check_autotune_home.py --source C:/Users/jun/Desktop/TEST/_archiv
 
 기존 폴더 전체와 `.git`, 미커밋 변경 및 오래된 백업은 `C:/Users/jun/Desktop/TEST/_archive/omni-autotune-before-ai-stack-20261104-112446`에 보존했다. 원본 예약 작업 XML과 전후 로컬 증거는 `.local/autotune-migration/`에 보관하며 Git에 포함하지 않는다.
 
+GitHub의 기존 `kosb123/omni-autotune` 저장소는 사용자 요청으로 2026-11-04에 삭제했다. 삭제 전 원격 Git mirror와 PR 기록을 `.local/github-retirement/omni-autotune-20261104-115739/`에 별도 보존했다. 현재 운영은 삭제한 원격 저장소를 필요로 하지 않는다.
+
 롤백이 필요하면 세 예약 작업의 새 실행을 막고 진행 중 작업이 끝난 것을 확인한다. 새 위치에서 생성된 최신 상태와 기록을 먼저 보존한다. 옛 경로의 정션만 제거한 뒤 아카이브를 복원하고, 최신 실행 데이터를 반영한 뒤 보관한 XML의 실행 경로와 작업 디렉터리를 복구한다. 원래 활성화 상태로 되돌리고 한 원본만 실행되는지 확인한다. 정션 대상이나 데이터베이스를 삭제하지 않는다.
 
 [OmniRoute 공식 문서](https://github.com/cheaper-inference/OmniRoute/blob/main/README.md)의 콤보 설정은 그대로 유지했다. [Microsoft 예약 작업 문서](https://learn.microsoft.com/en-us/powershell/module/scheduledtasks/set-scheduledtask?view=windowsserver2025-ps)에 따라 액션만 변경하며 실행 중인 인스턴스에 경로 변경이 소급 적용되지 않는 점을 고려했다.

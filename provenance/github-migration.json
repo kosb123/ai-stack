@@ -4,7 +4,11 @@
     "archived": true,
     "notice_commit": "b73fd962527d185214a42dd597bbd4ad39a7517d",
     "homepage": "https://github.com/kosb123/ai-stack",
-    "private": true
+    "private": true,
+    "deleted": true,
+    "deleted_date": "2026-11-04",
+    "backup": ".local/github-retirement/omni-autotune-20261104-115739/",
+    "verification": "delete command succeeded; old repository API 404; ai-stack accessible; runtime path checks passed"
   },
   {
     "repository": "kosb123/omniroute-claude-setup",
