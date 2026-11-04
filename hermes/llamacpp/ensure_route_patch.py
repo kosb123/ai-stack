@@ -8,7 +8,8 @@ import subprocess
 def ensure_patch(source, patch):
     def git(*args):
         return subprocess.run(['git', '-C', str(source), 'apply', *args, str(patch)],
-                              capture_output=True, text=True, timeout=15)
+                              capture_output=True, text=True, timeout=15,
+                              creationflags=subprocess.CREATE_NO_WINDOW if __import__("os").name == "nt" else 0)
     if git('--reverse', '--check').returncode == 0:
         return 'already_applied'
     if git('--check').returncode != 0:
