@@ -1,8 +1,8 @@
 diff --git a/gateway/run_turn_prepare.py b/gateway/run_turn_prepare.py
-index e919ad71bb..8e812464aa 100644
+index 1085f99..164fd92 100644
 --- a/gateway/run_turn_prepare.py
 +++ b/gateway/run_turn_prepare.py
-@@ -255,6 +255,9 @@ class GatewayTurnPrepareMixin:
+@@ -261,6 +261,9 @@ class GatewayTurnPrepareMixin:
          uses the sync ``SessionDB`` (``_db``), not the AsyncSessionDB forwarder."""
          if not session_id or agent is None or self._session_db is None:
              return
@@ -12,53 +12,11 @@ index e919ad71bb..8e812464aa 100644
          model = getattr(agent, "model", None)
          if not model:
              return
-diff --git a/gateway/session_local_inventory.py b/gateway/session_local_inventory.py
-index 271b875223..462f3c5213 100644
---- a/gateway/session_local_inventory.py
-+++ b/gateway/session_local_inventory.py
-@@ -130,6 +130,19 @@ def _cli_skills():
-     return grouped
- 
- 
-+def _selection_provider(agent):
-+    """Keep the route identity when a client reuses this snapshot for a new chat."""
-+    provider = getattr(agent, "provider", "") or ""
-+    if provider != "custom":
-+        return provider
-+    requested = getattr(agent, "requested_provider", "") or ""
-+    if requested and requested not in {"custom", "auto"} and not getattr(agent, "_voice_route_state", None):
-+        return requested
-+    from hermes_cli.runtime_provider import canonical_custom_identity
-+    return canonical_custom_identity(base_url=getattr(agent, "base_url", None),
-+                                     model=getattr(agent, "model", None)) or provider
-+
-+
- def session_inventory(authority, policy, agent, cwd):
-     """Main's banner/status fields for one session. Each section degrades to main's empty value on
-     its own, so one failing builder never blanks the others (main wrapped each in ``suppress``)."""
-@@ -143,7 +156,7 @@ def session_inventory(authority, policy, agent, cwd):
-         if agent is not None:
-             from agent.voice_turn_route import session_runtime_view
-             view = session_runtime_view(agent)
--            info["provider"] = getattr(view, "provider", "") or ""
-+            info["provider"] = _selection_provider(view)
-             info["tools"] = _grouped(getattr(agent, "tools", None))
-             info["system_prompt"] = getattr(agent, "_cached_system_prompt", "") or ""
-             compressor = getattr(agent, "context_compressor", None)
-@@ -210,7 +223,7 @@ def agent_inventory(agent) -> dict:
-     info: dict = {}
-     with contextlib.suppress(Exception):
-         from agent.voice_turn_route import session_runtime_view
--        info["provider"] = getattr(session_runtime_view(agent), "provider", "") or ""
-+        info["provider"] = _selection_provider(session_runtime_view(agent))
-     with contextlib.suppress(Exception):
-         info["tools"] = _grouped(getattr(agent, "tools", None))
-     info["system_prompt"] = getattr(agent, "_cached_system_prompt", "") or ""
 diff --git a/tui_gateway/agent_factory.py b/tui_gateway/agent_factory.py
-index 09694452b1..1496c2fdb5 100644
+index 11bd4a3..e219bce 100644
 --- a/tui_gateway/agent_factory.py
 +++ b/tui_gateway/agent_factory.py
-@@ -184,6 +184,10 @@ def _runtime_model_config(agent, existing: dict | None = None) -> dict:
+@@ -193,6 +193,10 @@ def _runtime_model_config(agent, existing: dict | None = None) -> dict:
      attributes DELETE the key rather than skip the write: resume reads provider/endpoint from this JSON
      (model column written separately), so a stale provider would route the resumed chat to the wrong endpoint."""
      config = dict(existing or {})
@@ -69,7 +27,7 @@ index 09694452b1..1496c2fdb5 100644
      from agent.voice_turn_route import session_runtime_view
      agent = session_runtime_view(agent)
      attr = lambda k: str(getattr(agent, k, "") or "").strip()
-@@ -208,6 +212,10 @@ def _runtime_model_config(agent, existing: dict | None = None) -> dict:
+@@ -211,6 +215,10 @@ def _runtime_model_config(agent, existing: dict | None = None) -> dict:
              config[key] = value
          else:
              config.pop(key, None)
