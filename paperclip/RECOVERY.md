@@ -56,3 +56,7 @@ autoMemoryReclaim=gradual
 - Hindsight가 Antigravity의 최대 소비자임. `hindsight-structured`는 Argon 주간 풀을 소모함.
 - 할당량 풀은 Gemini, Claude/GPT, Argon으로 나뉨. Antigravity의 Claude 모델은 할당량이 남아 있어도 429를 반환했고, 이 실패가 쌓이면 공급자 전체 차단으로 Gemini까지 막힘. 그래서 Claude는 콤보와 autotune 후보에서 뺌.
 - `Provider antigravity circuit breaker is open`이 나오면 원인 요청을 먼저 확인한 뒤 `POST /api/resilience/reset`으로 해제.
+
+## 9. Hindsight 사용량 절감 (2026-11-04)
+- Hermes `paperclip`, `google` 프로필은 Hindsight를 쓰지 않음. `memory.provider: local`, `hindsight_kb` 비활성.
+- 지식 페이지 25개는 소화 직후 갱신을 끄고 매일 18:00 UTC에 갱신함. 변경 전 트리거 백업은 `E:\hindsight\archive\mental-model-triggers-before-20261104.json`.
