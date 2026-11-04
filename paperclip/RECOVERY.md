@@ -49,3 +49,8 @@ autoMemoryReclaim=gradual
 - `docker-server-1`을 다시 만들면 `hermes-relay`도 함께 다시 시작해야 함: `docker compose up -d`
 - 완료 보고 키 `PAPERCLIP_BRIDGE_API_KEY`는 프로젝트 단위로 제한됨. 프로젝트를 추가하면 범위를 넓힌 키로 다시 발급해야 함.
 - Hermes API 키: default와 paperclip 프로필 `.env`의 `API_SERVER_KEY`. 서로 다른 값이어야 함.
+
+## 8. Gemini 에이전트 (2026-11-04)
+- Hermes `google` 프로필의 기본 모델은 OmniRoute 콤보 `gemini-agent`(`agy/gemini-3.8-flash-medium`, agy 연결 고정)임.
+- Antigravity의 Claude 할당량 소진(429)이 쌓이면 Gemini까지 함께 막힘. 그래서 autotune `provider_only_models`로 Antigravity 후보를 Gemini 위주로 제한함.
+- `Provider antigravity circuit breaker is open`이 나오면 원인 요청을 먼저 확인한 뒤 `POST /api/resilience/reset`으로 해제.
