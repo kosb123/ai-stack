@@ -20,6 +20,9 @@ Get-Content (Join-Path $root 'hindsight.env') | ForEach-Object {
 $env:HF_HOME = Join-Path $root 'hf'
 $env:HF_HUB_OFFLINE = "1"
 
+# Redirected stdout uses cp949 here, and the startup banner crashes on it (hindsight #4974)
+$env:PYTHONUTF8 = "1"
+
 $py = Join-Path $root 'venv\Scripts\python.exe'
 $runner = Join-Path $root 'run_api.py'
 Start-Process -FilePath $py -ArgumentList "`"$runner`"" -WindowStyle Hidden `

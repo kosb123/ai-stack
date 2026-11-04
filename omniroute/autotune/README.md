@@ -4,7 +4,7 @@ Hermes와 Hindsight가 쓰는 OmniRoute 콤보 세 개의 후보 목록을 실�
 목표(2026-10-29 사용자): **결제(antigravity Google AI Pro 계정)와 무료 할당량을 모두 오류 없이 최대한 쓰는 것.**
 
 - `hermes-fast-agent`: Hermes 작업용(이름 고정, Hermes 설정은 콤보 이름만 참조).
-- `hindsight-structured`: Hindsight 전용(`~\.hindsight\hindsight.env`의 `HINDSIGHT_API_LLM_MODEL`, Hindsight 공식
+- `hindsight-structured`: Hindsight 전용(`E:\hindsight\hindsight.env`의 `HINDSIGHT_API_LLM_MODEL`, Hindsight 공식
   설정 `docs/developer/performance.md`). 같은 점수 순서에서 Hindsight 형식 JSON 시험(`probe_structured`: 대화 수 KB +
   strict json_schema 배열, 비스트리밍, 90초 이내, 2회 연속)을 통과한 후보만 넣는다. north-mini가 Hindsight의
   json_schema 요청 64건 중 14건에서 300초 멈춰서 만든 레인(Hermes 스트리밍 요청은 265/265 정상이라 작업용에는 유지).

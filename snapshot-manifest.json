@@ -781,11 +781,6 @@
       "kind": "env"
     },
     {
-      "source": "C:\\Users\\jun\\.hindsight\\hindsight.env",
-      "target": "hindsight/legacy-client.env.example",
-      "kind": "env"
-    },
-    {
       "source": "C:\\Users\\jun\\.hindsight\\coding-agent.json",
       "target": "hindsight/coding-agent.example.json",
       "kind": "json"
@@ -934,6 +929,21 @@
       "source": "C:\\Users\\jun\\Documents\\Codex\\2026-11-02\\poteto-mode-pstack\\evidence\\consolidation-inputs\\upstreams.json",
       "target": "provenance/upstreams.json",
       "kind": "json"
+    },
+    {
+      "source": "E:\\hindsight\\Hindsight.vbs",
+      "target": "hindsight/ops/Hindsight.vbs",
+      "kind": "copy"
+    },
+    {
+      "source": "E:\\paperclip\\docker\\docker-compose.yml",
+      "target": "paperclip/docker-compose.example.yml",
+      "kind": "yaml"
+    },
+    {
+      "source": "E:\\paperclip\\docker\\RECOVERY.md",
+      "target": "paperclip/RECOVERY.md",
+      "kind": "copy"
     }
   ]
 }

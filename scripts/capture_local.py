@@ -59,11 +59,12 @@ for source in sorted(plugin.rglob('*')):
     if source.is_file() and (source.suffix in ('.py', '.md', '.yaml', '.sh', '.tsv') or source.name == 'LICENSE'):
         add(source, 'hermes/plugins/pstack/' + relative.as_posix())
 
-for name in ['run_api.py', 'start-hindsight.ps1']:
+for name in ['run_api.py', 'start-hindsight.ps1', 'Hindsight.vbs']:
     add(Path('E:/hindsight') / name, 'hindsight/ops/' + name)
 add('E:/hindsight/hindsight.env', 'hindsight/native.env.example', 'env')
-add(home / '.hindsight/hindsight.env', 'hindsight/legacy-client.env.example', 'env')
 add(home / '.hindsight/coding-agent.json', 'hindsight/coding-agent.example.json', 'json')
+add('E:/paperclip/docker/docker-compose.yml', 'paperclip/docker-compose.example.yml', 'yaml')
+add('E:/paperclip/docker/RECOVERY.md', 'paperclip/RECOVERY.md')
 add(home / '.codex/hooks.json', 'integrations/codex/hooks.example.json', 'json')
 codex = tomllib.loads((home / '.codex/config.toml').read_text(encoding='utf-8'))
 generated('codex-mcp.json', {'mcp_servers': {'hindsight': codex.get('mcp_servers', {}).get('hindsight', {})}},
