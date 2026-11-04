@@ -1,0 +1,11 @@
+﻿{
+    "repository":  "https://github.com/kosb123/omni-autotune",
+    "head":  "5a137711308eff5c9dcaa9b50087d7bc7fe320e9",
+    "dirty":  [
+                  " M README.md",
+                  " M autotune.py",
+                  " M test_preferred.py"
+              ],
+    "archived":  "C:\\Users\\jun\\Desktop\\TEST\\_archive\\omni-autotune-before-ai-stack-20261104-112446",
+    "canonical":  "omniroute/autotune"
+}

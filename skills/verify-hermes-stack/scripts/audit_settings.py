@@ -14,8 +14,8 @@ import urllib.parse
 import yaml
 
 HOME = Path('C:/Users/jun/AppData/Local/Hermes')
-TUNER = Path('C:/Users/jun/Desktop/TEST/omni-autotune')
 ROOT = Path(__file__).resolve().parents[3]
+TUNER = Path(__file__).resolve().parents[3] / 'omniroute/autotune'
 LIVE_KEYS = {
     'HINDSIGHT_API_LLM_BASE_URL', 'HINDSIGHT_API_LLM_MODEL',
     'HINDSIGHT_API_MENTAL_MODEL_REFRESH_LLM_MODEL', 'HINDSIGHT_API_LLM_REASONING_EFFORT',

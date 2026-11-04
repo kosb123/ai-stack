@@ -11,7 +11,8 @@ REPLACEMENTS = {
     'hermes/plugins/pstack/docs/guide/10-recipes-and-pitfalls.md': [
         ('![She tastes a finished dish while robots cook from a recipe box, with pinned cards reading /how, /tdd, and cronjob above the counter.](./images/recipes.jpg)', '')],
     'skills/verify-hermes-stack/scripts/verify_stack.py': [('parents[4]', 'parents[3]')],
-    'skills/verify-hermes-stack/scripts/audit_settings.py': [('parents[4]', 'parents[3]')],
+    'skills/verify-hermes-stack/scripts/audit_settings.py': [('parents[4]', 'parents[3]'),
+        ("TUNER = Path('C:/Users/jun/Desktop/TEST/omni-autotune')", "TUNER = Path(__file__).resolve().parents[3] / 'omniroute/autotune'")],
     'skills/verify-hermes-stack/SKILL.md': [(OLD, NEW), (OLD.replace('/', '\\'), NEW.replace('/', '\\')),
         ('C:/Users/jun/Documents/Codex/2026-11-01/poteto-mode/evidence/runs/', 'evidence/runs/'),
         ('# Verify the installed Hermes stack', '# Verify the installed Hermes stack\n\nRun commands from the repository root. Resolve these relative paths from that directory.')],

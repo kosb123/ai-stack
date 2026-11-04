@@ -1,56 +1,6 @@
 {
   "entries": [
     {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\autotune.py",
-      "target": "omniroute/autotune/autotune.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\bulk_discover.py",
-      "target": "omniroute/autotune/bulk_discover.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\verify_cycle.py",
-      "target": "omniroute/autotune/verify_cycle.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\test_preferred.py",
-      "target": "omniroute/autotune/test_preferred.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\measure.py",
-      "target": "omniroute/autotune/measure.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\sweep.py",
-      "target": "omniroute/autotune/sweep.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\selected_models.json",
-      "target": "omniroute/autotune/selected_models.json",
-      "kind": "json"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\README.md",
-      "target": "omniroute/autotune/README.md",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\hs_probe.py",
-      "target": "omniroute/autotune/survey/hs_probe.py",
-      "kind": "copy"
-    },
-    {
-      "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\survey.py",
-      "target": "omniroute/autotune/survey/survey.py",
-      "kind": "copy"
-    },
-    {
       "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune-dashboard\\dashboard\\api.py",
       "target": "omniroute/dashboard/api.py",
       "kind": "copy"

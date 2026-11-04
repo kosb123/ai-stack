@@ -8,6 +8,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Hermes | 작업 에이전트 | `C:/Users/jun/AppData/Local/hermes` | 게이트웨이 프로세스 | 앱 | `hermes/` |
 | OmniRoute | 클라우드 모델 라우터 | npm 전역, 상태는 `~/.omniroute/storage.sqlite` | `127.0.0.1:20128` | 작업 `OmniRouteServer` | `omniroute/` |
+| Autotune | OmniRoute 콤보 후보 관리 | 이 저장소의 `omniroute/autotune` | OmniRoute API와 읽기 전용 DB | 작업 `OmniAutotune-Check`, `OmniAutotune-Tune`, `OmniAutotune-Verify` | 실제 실행 원본 |
 | FreeLLMAPI | 예비 라우터 | `C:/Users/jun/Desktop/TEST/freellmapi` | `127.0.0.1:3001` | 작업 `FreeLLMAPI` | 없음 |
 | llama-server | 로컬 모델 | `C:/Users/jun/AppData/Local/Hermes/runtimes/llamacpp` | `127.0.0.1:18434` | 작업 `Local LlamaCpp Server (Qwen3.8 27B)` | `hermes/llamacpp/` |
 | Hindsight | 공용 기억 | `E:/hindsight` (Docker 아님) | `127.0.0.1:8888`, DB `5432` | 작업 `Hindsight API` | `hindsight/` |
@@ -29,3 +30,5 @@
 - 저장소 안의 검증 도구는 `skills/verify-hermes-stack/`, Claude Code 연동은 `integrations/claude-code/`에 있다.
 
 Dashboard는 로컬 소스를 읽으며 기록도 로컬에 둔다.
+
+Autotune의 실제 코드와 CONFIG는 이 저장소에서 직접 관리한다. 옛 `Desktop/TEST/omni-autotune` 경로는 같은 폴더를 가리키는 정션이다. 대시보드의 옛 후보 파일 참조도 같은 파일을 읽는다. 자세한 보존 경로와 검증 범위는 [autotune 운영 통합](autotune-home.md)을 참고한다.

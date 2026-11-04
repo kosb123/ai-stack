@@ -22,6 +22,10 @@ auth.json
 credentials.json
 .api_key
 omniroute/autotune/state.json
+omniroute/autotune/state.tmp
+omniroute/autotune/.lock
 omniroute/autotune/reports/
 omniroute/autotune/survey/*.json
+omniroute/autotune/survey/*.jsonl
+omniroute/autotune/survey/*-todo.txt
 omniroute/dashboard/screenshots/

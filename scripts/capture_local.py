@@ -27,12 +27,7 @@ def generated(name, value, target):
     add(path, target, 'json')
 
 
-tuner = home / 'Desktop/TEST/omni-autotune'
-for name in ['autotune.py', 'bulk_discover.py', 'verify_cycle.py', 'test_preferred.py',
-             'measure.py', 'sweep.py', 'selected_models.json', 'README.md']:
-    add(tuner / name, 'omniroute/autotune/' + name, 'json' if name.endswith('.json') else 'copy')
-for source in sorted((tuner / 'survey').glob('*.py')):
-    add(source, 'omniroute/autotune/survey/' + source.name)
+tuner = repo / 'omniroute/autotune'
 dashboard = home / 'Desktop/TEST/omni-autotune-dashboard/dashboard'
 for source in sorted(dashboard.iterdir()):
     if source.is_file() and source.suffix in ('.py', '.js', '.html', '.css', '.md'):
@@ -134,9 +129,6 @@ patch = subprocess.check_output(['git', '-C', str(hermes / 'hermes-agent'), 'dif
                                   'gateway/run_turn_prepare.py', 'tui_gateway/agent_factory.py'])
 (inputs / 'hermes-local.patch').write_bytes(patch)
 add(inputs / 'hermes-local.patch', 'hermes/patches/installed-source.patch')
-patch = subprocess.check_output(['git', '-C', str(tuner), 'diff', 'trial/argon-hindsight-first..fix/lane-pin-cooldown', '--', 'autotune.py', 'test_preferred.py', 'README.md'])
-(inputs / 'lane-pin.patch').write_bytes(patch)
-add(inputs / 'lane-pin.patch', 'provenance/pending-lane-pin.patch')
 
 pg0 = Path('E:/hindsight/venv/Lib/site-packages/hindsight_api/pg0.py')
 baseline = pg0.with_name('pg0.py.bak-before-datadir-20261102')
@@ -150,7 +142,9 @@ metadata = {'omni_autotune': {}, 'hermes_agent': {}, 'pstack': {},
             'hindsight_coding_agents': {'package': '@vectorize-io/hindsight-coding-agents', 'version': '0.8.4'},
             'hindsight_hermes_plugin': {'version': '1.2.3', 'path': str(hermes / 'plugins/hindsight')},
             'note': 'Git source SHAs describe upstream baselines. Uncommitted running sources are preserved by file hashes.'}
-for key, source in [('omni_autotune', tuner), ('hermes_agent', hermes / 'hermes-agent'), ('pstack', plugin)]:
+metadata['omni_autotune'] = {'path': str(tuner), 'ownership': 'canonical runtime in ai-stack',
+                            'origin_record': 'provenance/autotune-origin.json'}
+for key, source in [('hermes_agent', hermes / 'hermes-agent'), ('pstack', plugin)]:
     metadata[key] = {'path': str(source), 'head': subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip(),
                      'branch': subprocess.check_output(['git', '-C', str(source), 'branch', '--show-current'], text=True).strip()}
 generated('upstreams.json', metadata, 'provenance/upstreams.json')

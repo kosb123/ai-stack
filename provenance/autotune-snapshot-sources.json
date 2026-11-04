@@ -1,0 +1,81 @@
+[
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\autotune.py",
+    "target": "omniroute/autotune/autotune.py",
+    "source_sha256": "71e10286534295308e80777bcd2c89b7ed56c773b34ed39aef64029c0b306837",
+    "snapshot_sha256": "71e10286534295308e80777bcd2c89b7ed56c773b34ed39aef64029c0b306837",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\bulk_discover.py",
+    "target": "omniroute/autotune/bulk_discover.py",
+    "source_sha256": "4d09773c2d34283f88b9847a3f23a85fdcb5afc0200b329242b0c011297cf740",
+    "snapshot_sha256": "b1fbaeb8d1a1e6a6624819b91c5631485ab459a35f38a1277a33b31a433bbe91",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\verify_cycle.py",
+    "target": "omniroute/autotune/verify_cycle.py",
+    "source_sha256": "5a143e10eb97f354b6e67c99fd623d98e1fd388226f76dba5c3068f434e0cec1",
+    "snapshot_sha256": "5a143e10eb97f354b6e67c99fd623d98e1fd388226f76dba5c3068f434e0cec1",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\test_preferred.py",
+    "target": "omniroute/autotune/test_preferred.py",
+    "source_sha256": "d12acffbb33a103ab8b8b33ba05e6b2292a8aaa64aa409361f7cc994ca120ef5",
+    "snapshot_sha256": "d12acffbb33a103ab8b8b33ba05e6b2292a8aaa64aa409361f7cc994ca120ef5",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\measure.py",
+    "target": "omniroute/autotune/measure.py",
+    "source_sha256": "ff16e7666a5a27988e37fb65bdcf0dcb987cefea1504de0b67d4995bc4b6cba4",
+    "snapshot_sha256": "308d3fb5176eefecd2403a30f6f69b268483c70fcc885c73b508c4c92272923b",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\sweep.py",
+    "target": "omniroute/autotune/sweep.py",
+    "source_sha256": "1ed42caeb5f5e3ccdec487af54ac2b670faf0c46d04399503767bce04d993b49",
+    "snapshot_sha256": "1ed42caeb5f5e3ccdec487af54ac2b670faf0c46d04399503767bce04d993b49",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\selected_models.json",
+    "target": "omniroute/autotune/selected_models.json",
+    "source_sha256": "fdedff496a29d623ae076ae35bcc8dde4d5bfbe25c9ac20f87e3490c00f6c8b6",
+    "snapshot_sha256": "36b19bc28e2153c73384b2ba8cd3ea819d1e1d620b33b34e50f02deace7c6c03",
+    "redacted": true
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\README.md",
+    "target": "omniroute/autotune/README.md",
+    "source_sha256": "98c425e89243a66d445699161a91f4c3623fb37a3d3f3ad053e81f6576986a63",
+    "snapshot_sha256": "98c425e89243a66d445699161a91f4c3623fb37a3d3f3ad053e81f6576986a63",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\hs_probe.py",
+    "target": "omniroute/autotune/survey/hs_probe.py",
+    "source_sha256": "d31650a437e872485bbd90d40dac7165ea42b9d08975640ebfbac9a3ba7ac8fe",
+    "snapshot_sha256": "d31650a437e872485bbd90d40dac7165ea42b9d08975640ebfbac9a3ba7ac8fe",
+    "redacted": false
+  },
+  {
+    "source": "C:\\Users\\jun\\Desktop\\TEST\\omni-autotune\\survey\\survey.py",
+    "target": "omniroute/autotune/survey/survey.py",
+    "source_sha256": "9a0aa9a800fbd24f37ff62e3c2f41d6d7bf0772d0567770483c6770dcfc96a03",
+    "snapshot_sha256": "2e85091bab0f8c9a6c6c50b05c76f44695318f575e563e4e224a9d00e9f26c34",
+    "redacted": false,
+    "adjustments": [
+      "normalize text newlines to LF"
+    ]
+  }
+]

@@ -1,5 +1,7 @@
 # 출처와 이전 작업
 
+2026-11-04에 autotune의 실제 실행 원본을 `omniroute/autotune/`으로 통합했다. 아래의 수집 경로는 최초 스냅샷 출처다. 현재 예약 작업, 상태 보존과 롤백 정보는 [autotune 운영 통합](autotune-home.md)에 있다.
+
 `snapshot-manifest.json`은 로컬 원본과 저장소 대상 경로를 연결한다. `provenance/sources.json`은 수집 출처를 기록한다. 외부 코드와 스킬 스냅샷을 수정하거나 재배포할 때 원래 라이선스와 저작권 고지를 유지한다.
 
 | 원본 | 이 저장소의 관리 대상 |

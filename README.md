@@ -1,6 +1,8 @@
 # ai-stack
 
-Hermes, OmniRoute, Hindsight의 설정 예시와 운영 스크립트, 검증 도구를 관리하는 저장소다. 기존 실행 경로는 그대로 사용한다. 저장소의 파일을 수정해도 실행 중인 서비스에 자동으로 반영되지 않는다.
+Hermes, OmniRoute, Hindsight와 Paperclip의 설정 예시, 운영 스크립트와 검증 도구를 관리한다. `omniroute/autotune/`은 예약 작업이 직접 실행하는 실제 코드와 설정 원본이다. 이 폴더의 변경은 다음 예약 실행부터 사용된다. 다른 서비스의 설정 예시는 실행 환경에 자동 반영되지 않는다.
+
+autotune 운영 경로와 보존한 원본, 확인 명령은 [autotune 운영 통합](docs/autotune-home.md)을 참고한다.
 
 ## 시작하기
 
