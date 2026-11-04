@@ -2,6 +2,8 @@
 
 (JUN-8, 2026-11-04)
 
+재사용 가능한 절차(타 프로젝트 적용 방법)는 [워크스페이스 Linux 가상 환경 준비](workspace-venv-provisioning.md)를 참고한다.
+
 ## 문제
 
 policy-radar의 JUN-6 리뷰에서 Codex가 컨테이너에서 테스트를 실행하지 못했다.
